@@ -6,7 +6,6 @@
 
 <div class="container">
 
-    <!--<form action="${/claim}" method=""></form>-->
     <h1 th:text="${item.title}" />
 
     <p th:text="${item.lost}" />
@@ -26,7 +25,10 @@
     <p th:text="${item.zipcode}" />
 
     <p th:text="${item.categories}" />
-    
+
+    <form action="${/claim}" method="POST">
+        <input value="That's Mine!" type="submit" />
+    </form>
 
 </div>
 
