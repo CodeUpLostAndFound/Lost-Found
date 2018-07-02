@@ -3,29 +3,39 @@
 <head th:replace="partials/header :: header('Posts')" ></head>
 <body>
 <div th:replace="partials/navbar :: navbar"></div>
-<h1>Posts</h1>
-<!--<h1 th:if="${! posts.isEmpty()}">Here are all the posts!</h1>-->
-<!--<h1 th:if="${posts.isEmpty()}">Sorry, no results found!</h1>-->
+<img src="#" alt="L'nF">
+<h1>Welcome to Lost 'n Found!</h1>
+<!--<h1 th:if="${! items.isEmpty()}">Here are all the found items!</h1>-->
+<!--<h1 th:if="${itens.isEmpty()}">Sorry, no results found!</h1>-->
 
-<!--<div class="row">-->
-    <!--<form class="col-6">-->
-        <!--<div class="form-group">-->
-            <!--<label for="search">Search</label>-->
-            <!--<input class="form-control" id="search" type="text" name="search" th:value="${searchTerm}" />-->
-        <!--</div>-->
-    <!--</form>-->
-<!--</div>-->
+<div class="row">
+    <form class="col-6">
+        <div class="form-group">
+            <button>I Lost It!</button>
+            <!--Takes user to search page-->
+        </div>
+    </form>
+</div>
 
-<h1>Where's my navabr?!</h1>
-<!--<div th:each="post : ${posts}">-->
+<div class="row">
+    <form class="col-6">
+        <div class="form-group">
+            <button>I Found It!</button>
+            <!--Takes user to search page-->
+        </div>
+    </form>
+</div>
+
+<!--<div th:each="item : ${items}">-->
     <!--<div class="card col-6">-->
         <!--<div class="card-body">-->
-            <!--<h2 class="text-center"><span th:text="${post.title}"></span></h2>-->
-            <!--<p>Posted By: <span th:text="${post.user.username}" /></p>-->
-
-            <!--<p class="text-center"><span th:text="${post.body}"></span></p>-->
-            <!--<a th:href="@{/posts/{id}/edit(id=${post.id})}" class="btn btn-primary btn-block">Edit</a>-->
-            <!--<form class="col-3" method="post" th:action="@{/posts/{id}/delete(id=${post.id})}">-->
+            <!--<h2 class="text-center"><span th:text="${item.title}"></span></h2>-->
+            <!--<p>Posted By: <span th:text="${item.user.username}" /></p>-->
+<!---->
+            <!--<p class="text-center"><span th:text="${item.body}"></span></p>-->
+            <!--<img src="${item.img}" />-->
+            <!--<a th:href="@{/items/{id}/edit(id=${item.id})}" class="btn btn-primary btn-block">Edit</a>-->
+            <!--<form class="col-3" method="post" th:action="@{/items/{id}/delete(id=${item.id})}">-->
                 <!--<input type="submit" class="btn btn-info btn-block" value="Delete" />-->
             <!--</form>-->
         <!--</div>-->

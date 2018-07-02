@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head(${'Profile'})" />
+<body>
+
+<h1>Welcome <span th:text="${user.username}"></span></h1>
+
+<div class="container">
+    <div th:each="item : ${item}">
+        <div class="card col-6">
+            <div class="card-body">
+
+            <h1 th:text="${item.title}" />
+
+            <p th:text="${item.lost}" />
+
+            <p th:text="${item.description}" />
+
+            <p th:text="${item.img}" />
+
+            <p th:text="${item.address_1}" />
+
+            <p th:text="${item.address_2}" />
+
+            <p th:text="${item.city}" />
+
+            <p th:text="${item.state}" />
+
+            <p th:text="${item.zipcode}" />
+
+            <p th:text="${item.categories}" />
+
+            <form action="${/delete}" method="POST">
+                <input value="delete" type="submit" />
+            </form>
+            <form action="${/edit}" method="POST">
+                <input value="edit" type="submit" />
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<th:block th:replace="partials :: footer" />
+</body>
+</html>
