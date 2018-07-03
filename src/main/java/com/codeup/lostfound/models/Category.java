@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name="categories")
-public class category {
+public class Category {
 
         @Id
         @GeneratedValue

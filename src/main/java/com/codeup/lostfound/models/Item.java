@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="items")
+@Table(name = "items")
 public class Item {
 
     @Id
@@ -12,16 +12,16 @@ public class Item {
     private long id;
 
     @ManyToOne
-    @JoinColumn (name = "user_id")
+    @JoinColumn(name = "user_id")
     private User user;
 
-    @Column (name="title_of_item", nullable = false)
+    @Column(name = "title", nullable = false)
     private String title;
 
-    @Column (name = "description_of_item", nullable = false, columnDefinition = "TEXT")
+    @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String description;
 
-    @Column (name = "lost_or_found", nullable = false)
+    @Column(name = "lost_or_found", nullable = false)
     private boolean lost;
 
     @Column
@@ -40,44 +40,38 @@ public class Item {
     private String state;
 
     @Column
-    private  String zipcode;
+    private String zipcode;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name="Items_cats",
-            joinColumns={@JoinColumn(name="item_id")},
-            inverseJoinColumns={@JoinColumn(name="category_id")}
-        )
-        private List<category> categories;
+//    @JoinTable(
+//            name="Items_cats",
+//            joinColumns={@JoinColumn(name="item_id")},
+//            inverseJoinColumns={@JoinColumn(name="category_id")}
+//        )
+    @JoinTable
+    private List<Category> categories;
 
 
+    public Item() {
+    }
 
 
+    //    new item
+    public Item(String title, String description, boolean lost, String img, String address_1, String address_2, String city, String state, String zipcode, List<Category> categories) {
 
+        this.title = title;
+        this.description = description;
+        this.lost = lost;
+        this.img = img;
+        this.address_1 = address_1;
+        this.address_2 = address_2;
+        this.city = city;
+        this.state = state;
+        this.zipcode = zipcode;
+        this.categories = categories;
+    }
 
-
-
-
-
-    public Item() {}
-
-
-        //    new item
-        public Item( String title, String description, boolean lost, String img, String address_1, String address_2, String city, String state, String zipcode, List<category> categories) {
-
-            this.title = title;
-            this.description = description;
-            this.lost = lost;
-            this.img = img;
-            this.address_1 = address_1;
-            this.address_2 = address_2;
-            this.city = city;
-            this.state = state;
-            this.zipcode = zipcode;
-            this.categories = categories;
-        }
-
-    public Item(long id, String title, String description, boolean lost, String img, String address_1, String address_2, String city, String state, String zipcode, List<category> categories){
+    public Item(long id, String title, String description, boolean lost, String img, String address_1, String address_2, String city, String state, String zipcode, List<Category> categories) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -90,7 +84,7 @@ public class Item {
         this.zipcode = zipcode;
         this.categories = categories;
 
-}
+    }
 
     public long getId() {
         return id;
@@ -181,11 +175,11 @@ public class Item {
     }
 
 
-    public List<category> getCategories() {
+    public List<Category> getCategories() {
         return categories;
     }
 
-    public void setCategories(List<category> categories) {
+    public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
 }
