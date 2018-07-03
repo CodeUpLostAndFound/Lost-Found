@@ -12,7 +12,19 @@ public class UserController {
     @GetMapping("/")
     public String landing(Model model) {
 
+        return "redirect:users/login";
+    }
+
+    @GetMapping("users/login")
+    public String login(Model model) {
+
         return "users/login";
+    }
+
+    @PostMapping("users/login")
+    public String loggingIn() {
+
+        return "redirect:items";
     }
 
     @GetMapping("users/register")
