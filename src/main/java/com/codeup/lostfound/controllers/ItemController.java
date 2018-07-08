@@ -4,6 +4,7 @@ import com.codeup.lostfound.models.Item;
 import com.codeup.lostfound.repositories.CategoryRepository;
 import com.codeup.lostfound.repositories.ItemRepository;
 import com.codeup.lostfound.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,7 @@ public class ItemController {
     public UserRepository userRepository;
     public CategoryRepository categoryRepository;
 
-
+    @Autowired
     public ItemController(ItemRepository itemRepository, UserRepository userRepository, CategoryRepository categoryRepository) {
         this.itemRepository = itemRepository;
         this.userRepository = userRepository;

@@ -12,6 +12,6 @@ public class AuthenticationController {
 
     @GetMapping("/logout")
     public String logout(){
-        return "index";
+        return "users/Login";
     }
 }
