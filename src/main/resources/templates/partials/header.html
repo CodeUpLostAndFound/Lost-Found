@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<!--<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" />-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:fragment="header(title)">
     <meta charset="UTF-8" />
     <title th:text="${title}"></title>
@@ -11,13 +11,13 @@
     <!--<link rel="stylesheet" href="TODO" th:href="@{TODO}"/>-->
 </head>
 <body>
-<!--<div sec:authorize="isAuthenticated()">-->
-    <!--This content is only shown to authenticated users.-->
-<!---->
-    <!--User ID: <span th:text="${#authentication.principal.id}"/>-->
-    <!--Username: <span th:text="${#authentication.principal.username}"/>-->
-    <!--Email: <span th:text="${#authentication.principal.email}"/>-->
-<!--</div>-->
+<div sec:authorize="isAuthenticated()">
+    This content is only shown to authenticated users.
+
+    User ID: <span th:text="${#authentication.principal.id}"/>
+    Username: <span th:text="${#authentication.principal.username}"/>
+    Email: <span th:text="${#authentication.principal.email}"/>
+</div>
 
 
 </body>

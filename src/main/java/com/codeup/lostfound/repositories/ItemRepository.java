@@ -10,6 +10,7 @@ public interface ItemRepository extends CrudRepository <Item, Integer>  {
 
     List<Item>findAll();
 
+    Object findOne(int id);
 
 
 //

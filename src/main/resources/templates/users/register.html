@@ -5,15 +5,15 @@
 <body>
 <div th:replace="partials/navbar :: navbar"></div>
 <h1>Create an account</h1>
-<form th:action="@{users/register}" method="post">
+<form th:action="@{users/register}" method="post" th:object="${user}">
     <label for="username">Username</label>
-    <input id="username" />
+    <input id="username" th:field="*{username}" />
 
     <label for="email">Email</label>
-    <input id="email" />
+    <input id="email" th:field="*{email}" />
 
     <label for="password">Password</label>
-    <input id="password" type="password" />
+    <input id="password" type="password" th:field="*{password}" />
 
     <input value="Sign me up!" type="submit" />
 </form>
