@@ -9,7 +9,7 @@ public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -71,7 +71,7 @@ public class Item {
         this.categories = categories;
     }
 
-    public Item(long id, String title, String description, boolean lost, String img, String address_1, String address_2, String city, String state, String zipcode, List<Category> categories) {
+    public Item(int id, String title, String description, boolean lost, String img, String address_1, String address_2, String city, String state, String zipcode, List<Category> categories) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -90,7 +90,7 @@ public class Item {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

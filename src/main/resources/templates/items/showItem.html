@@ -1,8 +1,9 @@
 
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments :: head(${'Item Show Page'})" />
+<head th:replace="partials/header :: head(${'Item Show Page'})" />
 <body>
+<div th:replace="partials/navbar :: navbar"></div>
 
 <div class="container">
 
@@ -32,6 +33,6 @@
 
 </div>
 
-<th:block th:replace="partials :: footer" />
+<th:block th:replace="partials/footer :: footer" />
 </body>
 </html>
