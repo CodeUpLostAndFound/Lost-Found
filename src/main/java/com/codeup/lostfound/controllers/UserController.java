@@ -24,7 +24,7 @@ public class UserController {
         @GetMapping("/")
     public String landing(Model model) {
 
-        return "redirect:users/login";
+        return "redirect:login";
     }
 
     @GetMapping("/users/register")
