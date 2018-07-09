@@ -27,20 +27,6 @@ public class UserController {
         return "redirect:users/login";
     }
 
-//    @GetMapping("users/login")
-//    public String login(Model model) {
-//        public String showLoginForm() {
-//            return "users/login";
-//        }
-//        return "redirect:items";
-//    }
-
-//    @PostMapping("users/login")
-//    public String loggingIn() {
-//
-//        return "redirect:items";
-//    }
-
     @GetMapping("/users/register")
     public String register(Model model) {
         model.addAttribute("user", new User());

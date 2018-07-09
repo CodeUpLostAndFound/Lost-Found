@@ -29,7 +29,7 @@ public class ItemController {
     }
 
 
-    @GetMapping("items")
+    @GetMapping("/items")
     public String allItems(Model model) {
         List<Item> items= itemRepository.findAll();
         model.addAttribute("items", items);
