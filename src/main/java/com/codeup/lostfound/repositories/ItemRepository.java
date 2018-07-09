@@ -14,7 +14,7 @@ public interface ItemRepository extends CrudRepository <Item, Integer>  {
 
     void delete(int id);
 
-    List<Item> search(String s);
+//    List<Item> search(String s);
 
 
 //
