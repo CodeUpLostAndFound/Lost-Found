@@ -20,6 +20,7 @@ public class ItemController {
     public ItemRepository itemRepository;
     public UserRepository userRepository;
     public CategoryRepository categoryRepository;
+    public ItemRepository itemService;
 
     @Autowired
     public ItemController(ItemRepository itemRepository, UserRepository userRepository, CategoryRepository categoryRepository) {
@@ -40,7 +41,7 @@ public class ItemController {
     public String oneItem(@PathVariable int id, Model model) {
         Item item = (Item) itemRepository.findOne(id);
         model.addAttribute("item", item);
-        return "items/index";
+        return "items/showItem";
     }
 
     @GetMapping("items/create")
@@ -53,5 +54,23 @@ public class ItemController {
     public String registered(@ModelAttribute Item item) {
         item.save(item);
         return "items";
+    }
+
+    @GetMapping("/items/{id}/edit")
+    public String edit(@PathVariable int id, Model model) {
+        model.addAttribute("item", itemService.findOne(id));
+        return "items/edit";
+    }
+
+    @PostMapping("/items/{id}/edit")
+    public String updatePost(@PathVariable int id, @ModelAttribute Item item) {
+        itemService.save(item);
+        return "redirect:/items/" + id;
+    }
+
+    @PostMapping("/items/{id}/delete")
+    public String delete(@PathVariable int id) {
+        itemService.delete(id);
+        return "redirect:/items";
     }
 }

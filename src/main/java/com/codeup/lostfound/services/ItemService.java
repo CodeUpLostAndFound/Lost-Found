@@ -48,7 +48,7 @@ public class ItemService {
         itemRepository.delete(id);
     }
 
-    public List<Item> search(String searchTerm) {
-        return itemRepository.search("%" + searchTerm + "%");
-    }
+//    public List<Item> search(String searchTerm) {
+//        return itemRepository.search("%" + searchTerm + "%");
+//    }
 }
