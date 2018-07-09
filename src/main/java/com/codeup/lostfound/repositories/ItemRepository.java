@@ -12,6 +12,10 @@ public interface ItemRepository extends CrudRepository <Item, Integer>  {
 
     Object findOne(int id);
 
+    void delete(int id);
+
+    List<Item> search(String s);
+
 
 //
 //    @Query(nativeQuery = true, value = "SELECT * FROM posts WHERE title LIKE ?1 OR body LIKE ?1")
