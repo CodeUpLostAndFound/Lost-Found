@@ -16,7 +16,7 @@ public class UserController {
     private UserRepository users;
     private PasswordEncoder passwordEncoder;
 
-    public UserController(UserRepository users , PasswordEncoder passwordEncoder) {
+    public UserController(UserRepository users, PasswordEncoder passwordEncoder) {
         this.users = users;
         this.passwordEncoder = passwordEncoder;
     }
@@ -27,36 +27,37 @@ public class UserController {
         return "redirect:users/login";
     }
 
-    @GetMapping("users/login")
-    public String login(Model model) {
+//    @GetMapping("users/login")
+//    public String login(Model model) {
+//        public String showLoginForm() {
+//            return "users/login";
+//        }
+//        return "redirect:items";
+//    }
 
-        return "users/login";
-    }
+//    @PostMapping("users/login")
+//    public String loggingIn() {
+//
+//        return "redirect:items";
+//    }
 
-    @PostMapping("users/login")
-    public String loggingIn() {
-
-        return "redirect:items";
-    }
-
-    @GetMapping("users/register")
+    @GetMapping("/users/register")
     public String register(Model model) {
         model.addAttribute("user", new User());
-        return "users/register";
+        return "/users/register";
     }
 
-    @PostMapping("users/register")
+    @PostMapping("/users/register")
     public String registered(@ModelAttribute User user) {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         users.save(user);
-        return "redirect:users/login";
+        return "redirect:/users/login";
     }
 
-    @GetMapping("users/{id}")
-    public String profile(@PathVariable int id, Model model) {
+    @GetMapping("/users/{id}")
+    public String profile(@PathVariable long id, Model model) {
 
-        return "users/profile";
+        return "/users/profile";
     }
-
 }

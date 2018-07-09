@@ -182,4 +182,7 @@ public class Item {
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
+
+    public void save(Item item) {
+    }
 }

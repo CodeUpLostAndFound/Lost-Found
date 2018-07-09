@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -27,7 +29,7 @@ public class ItemController {
     }
 
 
-    @GetMapping("/items")
+    @GetMapping("items")
     public String allItems(Model model) {
         List<Item> items= itemRepository.findAll();
         model.addAttribute("items", items);
@@ -39,5 +41,17 @@ public class ItemController {
         Item item = (Item) itemRepository.findOne(id);
         model.addAttribute("item", item);
         return "items/index";
+    }
+
+    @GetMapping("items/create")
+    public String create(Model model){
+        model.addAttribute("item", new Item());
+        return "items/create";
+    }
+
+    @PostMapping("items/create")
+    public String registered(@ModelAttribute Item item) {
+        item.save(item);
+        return "items";
     }
 }
