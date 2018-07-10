@@ -3,6 +3,35 @@
 <head th:replace="partials/header :: header('Posts')" ></head>
 <body>
 <div th:replace="partials/navbar :: navbar"></div>
+<div class="row">
+    <form class="col-6">
+        <div class="form-group">
+            <label for="search">Search by zipcode</label>
+            <input class="form-control" id="zipSearch" type="text" name="search" th:value="${zipcode}" />
+        </div>
+        <label for="city">Search by city</label>
+        <input class="form-control" id="cityearch" type="text" name="search" th:value="${city}"
+    </form>
+</div>
+
+<div class="row">
+    <form class="col-6">
+        <div class="form-group">
+            <label for="catSearch">Search by category</label>
+            <select>
+                <option value="electronics">Electronics</option>
+                <option value="apparel">Apparel</option>
+                <option value="personal items">Personal Items</option>
+                <option value="pets">Pets</option>
+                <option value="miscellaneous">Miscellaneous</option>
+            </select>
+        </div>
+    </form>
+</div>
+
+
+
+
 <h1>Items Found</h1>
 
 
