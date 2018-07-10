@@ -1,8 +1,11 @@
 package com.codeup.lostfound.controllers;
 
 
+import com.codeup.lostfound.models.Item;
 import com.codeup.lostfound.models.User;
+import com.codeup.lostfound.repositories.ItemRepository;
 import com.codeup.lostfound.repositories.UserRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,13 +14,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class UserController {
     private UserRepository users;
     private PasswordEncoder passwordEncoder;
+    private ItemRepository itemRepository;
 
-    public UserController(UserRepository users, PasswordEncoder passwordEncoder) {
+    public UserController(UserRepository users,ItemRepository itemRepository , PasswordEncoder passwordEncoder) {
         this.users = users;
+        this.itemRepository = itemRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -29,6 +36,7 @@ public class UserController {
 
     @GetMapping("/users/register")
     public String register(Model model) {
+
         model.addAttribute("user", new User());
         return "/users/register";
     }
@@ -42,8 +50,13 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}")
-    public String profile(@PathVariable long id, Model model) {
-
+    public String profile(@PathVariable int id, Model model) {
+        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = users.findById(prin.getId());
+        model.addAttribute("prin", user);
+        model.addAttribute("user", user);
+        List<Item> items= itemRepository.findByUser(user);
+        model.addAttribute("items", items);
         return "/users/profile";
     }
 }
