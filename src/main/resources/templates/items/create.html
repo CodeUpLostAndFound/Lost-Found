@@ -13,7 +13,7 @@
     <input id="description" th:field="*{description}" />
 
     <label for="lost">please check if this is a lost item</label>
-    <input id="lost" type="checkbox" th:field="*{lost}" />
+    <input id="lost" type="checkbox" th:checked="*{lost}" />
 
     <!--<label for="img">Upload Image of item if available</label>-->
     <!--<input type="file" id="img" name="img" th:accept="*{image/*}">-->
