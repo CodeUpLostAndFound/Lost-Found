@@ -1,13 +1,14 @@
 
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments :: head(${'Profile'})" />
+<head th:replace="partials/header :: head(${'Profile'})" />
 <body>
+<div th:replace="partials/navbar :: navbar"></div>
 
 <h1>Welcome <span th:text="${user.username}"></span></h1>
 
 <div class="container">
-    <div th:each="item : ${item}">
+    <div th:each="item : ${items}">
         <div class="card col-6">
             <div class="card-body">
 
@@ -31,17 +32,18 @@
 
             <p th:text="${item.categories}" />
 
-            <form action="${/delete}" method="POST">
-                <input value="delete" type="submit" />
-            </form>
-            <form action="${/edit}" method="POST">
-                <input value="edit" type="submit" />
-            </form>
+            <!--<form action="${/delete}" method="POST">-->
+                <!--<input value="delete" type="submit" />-->
+            <!--</form>-->
+            <!--<form action="${/edit}" method="POST">-->
+                <!--<input value="edit" type="submit" />-->
+            <!--</form>-->
+                <hr/>
             </div>
         </div>
     </div>
 </div>
 
-<th:block th:replace="partials :: footer" />
+<th:block th:replace="partials/footer :: footer" />
 </body>
 </html>

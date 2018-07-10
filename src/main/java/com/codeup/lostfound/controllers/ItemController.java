@@ -1,10 +1,12 @@
 package com.codeup.lostfound.controllers;
 
 import com.codeup.lostfound.models.Item;
+import com.codeup.lostfound.models.User;
 import com.codeup.lostfound.repositories.CategoryRepository;
 import com.codeup.lostfound.repositories.ItemRepository;
 import com.codeup.lostfound.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,14 +18,14 @@ import java.util.List;
 
 @Controller
 public class ItemController {
-
+    public UserRepository users;
     public ItemRepository itemRepository;
     public UserRepository userRepository;
     public CategoryRepository categoryRepository;
     public ItemRepository itemService;
 
     @Autowired
-    public ItemController(ItemRepository itemRepository, UserRepository userRepository, CategoryRepository categoryRepository) {
+    public ItemController(ItemRepository itemRepository , UserRepository userRepository, CategoryRepository categoryRepository) {
         this.itemRepository = itemRepository;
         this.userRepository = userRepository;
         this.categoryRepository = categoryRepository;
@@ -32,6 +34,9 @@ public class ItemController {
 
     @GetMapping("/items")
     public String allItems(Model model) {
+        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userRepository.findById(prin.getId());
+        model.addAttribute("prin", prin);
         List<Item> items= itemRepository.findAll();
         model.addAttribute("items", items);
         return "items/index";
@@ -39,6 +44,9 @@ public class ItemController {
 
     @GetMapping("items/{id}")
     public String oneItem(@PathVariable int id, Model model) {
+        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userRepository.findById(prin.getId());
+        model.addAttribute("prin", prin);
         Item item = (Item) itemRepository.findOne(id);
         model.addAttribute("item", item);
         return "items/showItem";
@@ -46,18 +54,24 @@ public class ItemController {
 
     @GetMapping("items/create")
     public String create(Model model){
+        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userRepository.findById(prin.getId());
+        model.addAttribute("prin", prin);
         model.addAttribute("item", new Item());
         return "items/create";
     }
 
     @PostMapping("items/create")
     public String registered(@ModelAttribute Item item) {
-        item.save(item);
+        itemService.save(item);
         return "items";
     }
 
     @GetMapping("/items/{id}/edit")
     public String edit(@PathVariable int id, Model model) {
+        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userRepository.findById(prin.getId());
+        model.addAttribute("prin", prin);
         model.addAttribute("item", itemService.findOne(id));
         return "items/edit";
     }

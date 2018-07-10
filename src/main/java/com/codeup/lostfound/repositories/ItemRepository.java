@@ -2,6 +2,7 @@ package com.codeup.lostfound.repositories;
 
 
 import com.codeup.lostfound.models.Item;
+import com.codeup.lostfound.models.User;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
@@ -13,6 +14,8 @@ public interface ItemRepository extends CrudRepository <Item, Integer>  {
     Object findOne(int id);
 
     void delete(int id);
+
+    List<Item>findByUser(User user);
 
 //    List<Item> search(String s);
 
