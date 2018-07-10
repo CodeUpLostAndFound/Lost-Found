@@ -32,12 +32,13 @@
 
             <p th:text="${item.categories}" />
 
-            <!--<form action="${/delete}" method="POST">-->
-                <!--<input value="delete" type="submit" />-->
-            <!--</form>-->
-            <!--<form action="${/edit}" method="POST">-->
-                <!--<input value="edit" type="submit" />-->
-            <!--</form>-->
+                <form class="col-3" method="post" th:action="@{/items/{id}/edit(id=${item.id})}" th:hidden="prin.id">
+                <input type="submit" class="btn btn-info btn-block" value="Edit" />
+                </form>
+                <form class="col-3" method="post" th:action="@{/items/{id}/delete(id=${item.id})}">
+                <input type="submit" class="btn btn-info btn-block" value="Delete" />
+                </form>
+
                 <hr/>
             </div>
         </div>

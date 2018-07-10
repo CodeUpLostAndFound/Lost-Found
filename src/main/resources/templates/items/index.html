@@ -35,9 +35,9 @@
             <p class="text-center"><span th:text="${item.description}"></span></p>
             <img src="${item.img}" />
             <a th:href="@{/items/{id}(id=${item.id})}" class="btn btn-primary btn-block">view</a>
-            <form class="col-3" method="post" th:action="@{/items/{id}/delete(id=${item.id})}">
-                <input type="submit" class="btn btn-info btn-block" value="Delete" />
-            </form>
+            <!--<form class="col-3" method="post" th:action="@{/items/{id}/delete(id=${item.id})}">-->
+                <!--<input type="submit" class="btn btn-info btn-block" value="Delete" />-->
+            <!--</form>-->
         </div>
     </div>
 </div>
