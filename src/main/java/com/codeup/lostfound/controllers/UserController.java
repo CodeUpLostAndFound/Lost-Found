@@ -42,7 +42,7 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}")
-    public String profile(@PathVariable long id, Model model) {
+    public String profile(@PathVariable int id, Model model) {
 
         return "/users/profile";
     }

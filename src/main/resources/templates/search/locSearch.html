@@ -1,32 +1,32 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">-->
-<!--<head th:replace="partials/header :: header('Posts')" ></head>-->
-<!--<body>-->
-<!--<div th:replace="partials/navbar :: navbar"></div>-->
-<!--<h1>Items Found</h1>-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/header :: header('Posts')" ></head>
+<body>
+<div th:replace="partials/navbar :: navbar"></div>
+<h1>Items Found</h1>
 
 
 
 
-<!--<h1 th:if="${! items.isEmpty()}">Here are all the found items!</h1>-->
-<!--<h1 th:if="${itens.isEmpty()}">Sorry, no results found!</h1>-->
+<h1 th:if="${! items.isEmpty()}">Here are all the found items!</h1>
+<h1 th:if="${itens.isEmpty()}">Sorry, no results found!</h1>
 
-<!--<div th:each="item : ${items}">-->
-    <!--<div class="card col-6">-->
-        <!--<div class="card-body">-->
-            <!--<h2 class="text-center"><span th:text="${item.title}"></span></h2>-->
-            <!--&lt;!&ndash;<p>Posted By: <span th:text="${item.user.username}" /></p>&ndash;&gt;-->
+<div th:each="item : ${items}">
+    <div class="card col-6">
+        <div class="card-body">
+            <h2 class="text-center"><span th:text="${item.title}"></span></h2>
+            <!--<p>Posted By: <span th:text="${item.user.username}" /></p>-->
 
-            <!--<p class="text-center"><span th:text="${item.body}"></span></p>-->
-            <!--<img src="${item.img}" />-->
-            <!--<a th:href="@{/items/{id}/edit(id=${item.id})}" class="btn btn-primary btn-block">Edit</a>-->
-            <!--<form class="col-3" method="post" th:action="@{/items/{id}/delete(id=${item.id})}">-->
-                <!--<input type="submit" class="btn btn-info btn-block" value="Delete" />-->
-            <!--</form>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
+            <p class="text-center"><span th:text="${item.body}"></span></p>
+            <img src="${item.img}" />
+            <a th:href="@{/items/{id}/edit(id=${item.id})}" class="btn btn-primary btn-block">Edit</a>
+            <form class="col-3" method="post" th:action="@{/items/{id}/delete(id=${item.id})}">
+                <input type="submit" class="btn btn-info btn-block" value="Delete" />
+            </form>
+        </div>
+    </div>
+</div>
 
-<!--<div th:replace="partials/footer :: footer"></div>-->
-<!--</body>-->
-<!--</html>-->
+<div th:replace="partials/footer :: footer"></div>
+</body>
+</html>
