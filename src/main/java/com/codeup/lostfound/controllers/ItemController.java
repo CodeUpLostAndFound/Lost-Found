@@ -44,16 +44,16 @@ public class ItemController {
         return "items/showItem";
     }
 
-    @GetMapping("items/create")
+    @GetMapping("/items/create")
     public String create(Model model){
         model.addAttribute("item", new Item());
         return "items/create";
     }
 
-    @PostMapping("items/create")
+    @PostMapping("/items/create")
     public String registered(@ModelAttribute Item item) {
         item.save(item);
-        return "items";
+        return "/items/index";
     }
 
     @GetMapping("/items/{id}/edit")

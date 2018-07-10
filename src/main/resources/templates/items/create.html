@@ -5,7 +5,7 @@
 <body>
 <div th:replace="partials/navbar :: navbar"></div>
 <h1>Post a Lost or Found Item</h1>
-<form th:action="@{items/create}" method="post" th:object="${item}">
+<form th:action="@{/items/create}" method="post" th:object="${item}">
     <label for="title">Item Title</label>
     <input id="title" th:field="*{title}" />
 

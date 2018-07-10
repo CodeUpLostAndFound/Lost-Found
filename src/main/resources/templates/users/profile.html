@@ -1,7 +1,7 @@
 
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments :: head(${'Profile'})" />
+<head th:replace="partials/header :: header('Profile')" ></head>
 <body>
 
 <h1>Welcome <span th:text="${user.username}"></span></h1>
