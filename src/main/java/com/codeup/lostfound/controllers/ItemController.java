@@ -4,6 +4,7 @@ import com.codeup.lostfound.models.Item;
 import com.codeup.lostfound.repositories.CategoryRepository;
 import com.codeup.lostfound.repositories.ItemRepository;
 import com.codeup.lostfound.repositories.UserRepository;
+import com.codeup.lostfound.services.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,13 +21,14 @@ public class ItemController {
     public ItemRepository itemRepository;
     public UserRepository userRepository;
     public CategoryRepository categoryRepository;
-    public ItemRepository itemService;
+    private ItemService itemService;
 
     @Autowired
-    public ItemController(ItemRepository itemRepository, UserRepository userRepository, CategoryRepository categoryRepository) {
+    public ItemController(ItemRepository itemRepository, UserRepository userRepository, CategoryRepository categoryRepository, ItemService itemService) {
         this.itemRepository = itemRepository;
         this.userRepository = userRepository;
         this.categoryRepository = categoryRepository;
+        this.itemService = itemService;
     }
 
 
@@ -51,26 +53,26 @@ public class ItemController {
     }
 
     @PostMapping("/items/create")
-    public String registered(@ModelAttribute Item item) {
-        item.save(item);
-        return "/items/index";
+    public String created(@ModelAttribute Item item) {
+        itemService.save(item);
+        return "redirect:/items";
     }
 
     @GetMapping("/items/{id}/edit")
     public String edit(@PathVariable int id, Model model) {
-        model.addAttribute("item", itemService.findOne(id));
+        model.addAttribute("item", itemRepository.findOne(id));
         return "items/edit";
     }
 
     @PostMapping("/items/{id}/edit")
     public String updatePost(@PathVariable int id, @ModelAttribute Item item) {
-        itemService.save(item);
+        itemRepository.save(item);
         return "redirect:/items/" + id;
     }
 
     @PostMapping("/items/{id}/delete")
     public String delete(@PathVariable int id) {
-        itemService.delete(id);
+        itemRepository.delete(id);
         return "redirect:/items";
     }
 }
