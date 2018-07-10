@@ -79,9 +79,9 @@ public class ItemController {
     }
 
     @PostMapping("/items/{id}/edit")
-    public String updatePost(@PathVariable int id, @ModelAttribute Item item) {
+    public String updatePost(@ModelAttribute Item item, User user) {
         itemRepository.save(item);
-        return "redirect:/items/" + id;
+        return "redirect:users/" + user.getId();
     }
 
     @PostMapping("/items/{id}/delete")
