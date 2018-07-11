@@ -28,8 +28,12 @@ public class ItemService {
         // get the user from the session
         User sessionUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
+        System.out.printf("logged in user id: %s, username, %s\n", sessionUser.getId(), sessionUser.getUsername());
+
         // make sure to get the actual, real deal user from the DB.
         User user = userRepository.findById(sessionUser.getId());
+
+        System.out.println("user: " + user);
 
         item.setUser(user);
         itemRepository.save(item);
