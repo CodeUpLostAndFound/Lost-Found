@@ -2,6 +2,7 @@ package com.codeup.lostfound.repositories;
 
 
 import com.codeup.lostfound.models.Item;
+import com.codeup.lostfound.models.User;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

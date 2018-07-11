@@ -9,7 +9,7 @@
 
     <h1 th:text="${item.title}" />
 
-    <p th:text="${item.lost}" />
+    <!--<p th:text="${item.lost}" />-->
 
     <p th:text="${item.description}" />
 
@@ -27,9 +27,18 @@
 
     <p th:text="${item.categories}" />
 
+    <hr/>
+
     <form action="${/claim}" method="POST">
-        <input value="That's Mine!" type="submit" />
+        <input type="hidden" th:value="${item.id}" name="itemid"/>
+        <input type="hidden" th:value="${prin.id}" name="commentposterid"/>
+        <label for="comment">Comment</label>
+        <input id="comment" type="text" name="comment"/>
+        <input value="comment" type="submit" />
     </form>
+
+</div>
+<div>
 
 </div>
 
