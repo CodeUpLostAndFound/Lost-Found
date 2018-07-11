@@ -11,6 +11,7 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a th:href="@{/items}">Home</a></li>
             <li><a th:href="@{/items/create}">Create</a></li>
+            <li><a th:href="@{/search/locSearch}">Search</a></li>
             <li><a th:href="@{/users/{id}(id=${prin.id})}">Profile</a></li>
             <li>
                 <form th:action="@{/logout}" th:method="post">
