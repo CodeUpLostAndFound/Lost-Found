@@ -13,7 +13,7 @@
             <input class="form-control" id="zipcode" type="text" name="address" th:value="${search.zipcode}" />
         </div>
         </form>
-        div class="row">
+
         <form class="col-6">
             <div>
                 <dl class="dropdown">
@@ -28,15 +28,15 @@
                         <div class="mutliSelect">
                             <ul id="catSearch">
                                 <li>
-                                    <input type="checkbox" name="cat" th:value="${search.category}" />Electronics</li>
+                                    <input type="checkbox" name="cat" value="Electronics" />Electronics</li>
                                 <li>
-                                    <input type="checkbox" name="cat" th:value="${search.category}" />Apparel</li>
+                                    <input type="checkbox" name="cat" value="Apparel" />Apparel</li>
                                 <li>
-                                    <input type="checkbox" name="cat" th:value="${search.category}" />Personal Items</li>
+                                    <input type="checkbox" name="cat" value="Personal Items" />Personal Items</li>
                                 <li>
-                                    <input type="checkbox" name="cat" th:value="${search.category}" />Pets</li>
+                                    <input type="checkbox" name="cat" value="Pets" />Pets</li>
                                 <li>
-                                    <input type="checkbox" name="cat" th:value="${search.category}" />Miscellaneous</li>
+                                    <input type="checkbox" name="cat" value="Miscellaneous" />Miscellaneous</li>
                             </ul>
                         </div>
                     </dd>

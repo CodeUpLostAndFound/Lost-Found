@@ -6,7 +6,6 @@ import com.codeup.lostfound.repositories.ItemRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -22,38 +21,21 @@ public class SearchController {
 
     }
 
-    @GetMapping("search")
-    public String search(@RequestParam("zipcode", "address", "cat") String zipcode, String address, List category Model model) {
+    @GetMapping("/search")
+    public String search(@RequestParam("zipcode") String zipcode, @RequestParam("address") String address, Model model) {
         address =  "%" + address + "%";
         zipcode = "%" + zipcode + "%";
-        category = "%" + category + "%";
 
-        List<Item> Results = itemRepository.findByZipcodeLike(zipcode).findByaddressLike(address);
-        List<Item>catResults = categoryRepository.findBycatLike(category);
-        model.addAttribute("items", Results, catResults);
 
-//        public String addressSearch(@RequestParam("address") String address, Model model) {
-////            a = "%" + search + "%";
-//            address = "%" + address + "%";
-//            List<Item> addressResults = itemRepository.findByaddressLike(address);
-//            model.addAttribute("items", addressResults);
-//
-//            public String catSearch(@RequestParam("cat") String cat, Model model) {
-////            a = "%" + search + "%";
-//                cat = "%" + cat + "%";
-//                List<Item>catResults = categoryRepository.findBycatLike(cat);
-//                model.addAttribute("items", catResults);
-//
-//                public String zipAndAddress(@RequestParam("zipAddress") String cat, Model model) {
-//                    zipAddress =
-//                }
-//                List<Item> zipcodeAndAddress = itemRepository.findByZipcodeAndAddress(String zipcode, String address);
-//                model.addAttribute('items', zipcodeAndAddress)
+        List<Item> Results = itemRepository.findByZipcodeLikeAndAddressTwoLike(zipcode, address);
+        model.addAttribute("items", Results);
 
         return "items/index";
 
 
     }
+
+
 
 
 }

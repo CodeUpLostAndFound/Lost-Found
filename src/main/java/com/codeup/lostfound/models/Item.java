@@ -28,10 +28,10 @@ public class Item {
     private String img;
 
     @Column
-    private String address_1;
+    private String addressOne;
 
     @Column
-    private String address_2;
+    private String addressTwo;
 
     @Column
     private String city;
@@ -57,28 +57,28 @@ public class Item {
 
 
     //    new item
-    public Item(String title, String description, boolean lost, String img, String address_1, String address_2, String city, String state, String zipcode, List<Category> categories) {
+    public Item(String title, String description, boolean lost, String img, String addressOne, String addressTwo, String city, String state, String zipcode, List<Category> categories) {
 
         this.title = title;
         this.description = description;
         this.lost = lost;
         this.img = img;
-        this.address_1 = address_1;
-        this.address_2 = address_2;
+        this.addressOne = addressOne;
+        this.addressTwo = addressTwo;
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
         this.categories = categories;
     }
 
-    public Item(int id, String title, String description, boolean lost, String img, String address_1, String address_2, String city, String state, String zipcode, List<Category> categories) {
+    public Item(int id, String title, String description, boolean lost, String img, String addressOne, String addressTwo, String city, String state, String zipcode, List<Category> categories) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.lost = lost;
         this.img = img;
-        this.address_1 = address_1;
-        this.address_2 = address_2;
+        this.addressOne = addressOne;
+        this.addressTwo = addressTwo;
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
@@ -134,20 +134,20 @@ public class Item {
         this.img = img;
     }
 
-    public String getAddress_1() {
-        return address_1;
+    public String getAddressOne() {
+        return addressOne;
     }
 
-    public void setAddress_1(String address_1) {
-        this.address_1 = address_1;
+    public void setAddressOne(String addressOne) {
+        this.addressOne = addressOne;
     }
 
-    public String getAddress_2() {
-        return address_2;
+    public String getAddressTwo() {
+        return addressTwo;
     }
 
-    public void setAddress_2(String address_2) {
-        this.address_2 = address_2;
+    public void setAddressTwo(String addressTwo) {
+        this.addressTwo = addressTwo;
     }
 
     public String getCity() {
