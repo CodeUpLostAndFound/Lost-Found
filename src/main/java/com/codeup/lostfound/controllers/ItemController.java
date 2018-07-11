@@ -64,29 +64,30 @@ public class ItemController {
     }
 
     @PostMapping("/items/create")
-    public String created(@ModelAttribute Item item) {
+    public String created(@ModelAttribute Item item, User user) {
         itemService.save(item);
-        return "redirect:/items";
+        return "redirect:/users/" + user.getId();
     }
 
     @GetMapping("/items/{id}/edit")
     public String edit(@PathVariable int id, Model model) {
+        System.out.println("Hello!!!");
         User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User user = userRepository.findById(prin.getId());
+//        User user = userRepository.findById(prin.getId());
         model.addAttribute("prin", prin);
         model.addAttribute("item", itemRepository.findOne(id));
         return "items/edit";
     }
 
     @PostMapping("/items/{id}/edit")
-    public String updatePost(@PathVariable int id, @ModelAttribute Item item) {
+    public String updateItem(@PathVariable int id, @ModelAttribute Item item) {
         itemRepository.save(item);
         return "redirect:/items/" + id;
     }
 
     @PostMapping("/items/{id}/delete")
-    public String delete(@PathVariable int id) {
+    public String delete(@PathVariable int id, @ModelAttribute User user) {
         itemRepository.delete(id);
-        return "redirect:/items";
+        return "redirect:/users/" + user.getId();
     }
 }
