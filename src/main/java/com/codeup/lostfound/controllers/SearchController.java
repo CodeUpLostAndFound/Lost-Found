@@ -20,6 +20,12 @@ public class SearchController {
         this.categoryRepository = categoryRepository;
 
     }
+    @GetMapping("/search-form")
+    public String showSearchForm(){
+
+        return "search/locSearch";
+
+    }
 
     @GetMapping("/search")
     public String search(@RequestParam("zipcode") String zipcode, @RequestParam("address") String address, Model model) {
