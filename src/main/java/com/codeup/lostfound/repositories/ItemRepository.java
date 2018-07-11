@@ -16,9 +16,9 @@ public interface ItemRepository extends CrudRepository <Item, Integer>  {
     void delete(int id);
 
     List<Item> findByZipcodeLike(String zipcode);
-    List<Item> findByAddressLike(String address);
-    List<Item> findByZipcodeAndCat(String zipcode, String cat);
-    List<Item> findByZipcodeAndAddress(String zipcode, String address);
+//    List<Item> findByAddressLike(String address);
+    List<Item> findByZipcodeLikeAndAddressTwoLike(String zipcode, String address);
+//    List<Item> findByZipcodeLikeAndAddress_2Like(String zipcode, String address);
 
 
 //    @Query(nativeQuery = true, value = "SELECT * FROM item WHERE zipcode LIKE ?1 OR body LIKE ?1")

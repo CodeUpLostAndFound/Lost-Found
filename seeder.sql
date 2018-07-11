@@ -9,11 +9,11 @@ INSERT INTO users (email, username, password) VALUES
 
 
 
-INSERT INTO categories (category) VALUES ('Electronics'),('Apparel'),('Personal Items'),('Pets'),('Miscellaneous');
+INSERT INTO categories (category) VALUES ('Electronics'),('AppareIl'),('Personal Items'),('Pets'),('Miscellaneous');
 
 
 
-INSERT INTO items (user_id, title, description, lost_or_found, img, address_1, address_2, city, state, zipcode) VALUES
+INSERT INTO items (user_id, title, description, lost_or_found, img, address_one, address_two, city, state, zipcode) VALUES
 
  (1,'sunglasses', 'Found a pair of RayBan avaitors at the bar', FALSE ,NULL,'The Ticket Sports Pub','420 E Houston St', 'San Antonio', 'Texas', '78205'),
  (2, 'cellphone', 'I left my cellphone at the counter at this Starbucks', TRUE , NULL,'Starbucks', '411 E Quincy St', 'San Antonio', 'Texas', '78215'),
