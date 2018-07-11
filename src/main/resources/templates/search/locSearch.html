@@ -6,28 +6,51 @@
 <div class="row">
     <form class="col-6">
         <div class="form-group">
-            <label for="search">Search by zipcode</label>
-            <input class="form-control" id="zipSearch" type="text" name="search" th:value="${zipcode}" />
+            <label for="address">Search by address</label>
+            <input class="form-control" id="address" type="text" name="zipcode" th:value="${search.address}"/>
+            <br>
+            <label for="zipcode">Search by zipcode</label>
+            <input class="form-control" id="zipcode" type="text" name="address" th:value="${search.zipcode}" />
         </div>
-        <label for="city">Search by city</label>
-        <input class="form-control" id="cityearch" type="text" name="search" th:value="${city}"
+        </form>
+        div class="row">
+        <form class="col-6">
+            <div>
+                <dl class="dropdown">
+
+                    <dt>
+                        <a href="#">
+                            <label for="catSearch">Search by Category</label>
+                            <p class="multiSel"></p>
+                        </a>
+                    </dt>
+                    <dd>
+                        <div class="mutliSelect">
+                            <ul id="catSearch">
+                                <li>
+                                    <input type="checkbox" name="cat" th:value="${search.category}" />Electronics</li>
+                                <li>
+                                    <input type="checkbox" name="cat" th:value="${search.category}" />Apparel</li>
+                                <li>
+                                    <input type="checkbox" name="cat" th:value="${search.category}" />Personal Items</li>
+                                <li>
+                                    <input type="checkbox" name="cat" th:value="${search.category}" />Pets</li>
+                                <li>
+                                    <input type="checkbox" name="cat" th:value="${search.category}" />Miscellaneous</li>
+                            </ul>
+                        </div>
+                    </dd>
+                </dl>
+
+
+                <input value="Search" type="submit" />
+
     </form>
 </div>
 
-<div class="row">
-    <form class="col-6">
-        <div class="form-group">
-            <label for="catSearch">Search by category</label>
-            <select>
-                <option value="electronics">Electronics</option>
-                <option value="apparel">Apparel</option>
-                <option value="personal items">Personal Items</option>
-                <option value="pets">Pets</option>
-                <option value="miscellaneous">Miscellaneous</option>
-            </select>
-        </div>
-    </form>
-</div>
+
+
+
 
 
 

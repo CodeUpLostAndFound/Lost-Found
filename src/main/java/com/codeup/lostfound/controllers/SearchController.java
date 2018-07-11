@@ -16,24 +16,44 @@ public class SearchController {
     private ItemRepository itemRepository;
     private CategoryRepository categoryRepository;
 
-    public SearchController(ItemRepository itemRepository) {
+    public SearchController(ItemRepository itemRepository, CategoryRepository categoryRepository) {
         this.itemRepository = itemRepository;
+        this.categoryRepository = categoryRepository;
 
     }
 
     @GetMapping("search")
-    public String zipSearch(@RequestParam("search") String zipcode, Model model) {
-//            search = "%" + search + "%";
+    public String search(@RequestParam("zipcode", "address", "cat") String zipcode, String address, List category Model model) {
+        address =  "%" + address + "%";
         zipcode = "%" + zipcode + "%";
-        List<Item> zipResults = itemRepository.findByZipcodeLike(zipcode);
-        model.addAttribute("items", zipResults);
+        category = "%" + category + "%";
+
+        List<Item> Results = itemRepository.findByZipcodeLike(zipcode).findByaddressLike(address);
+        List<Item>catResults = categoryRepository.findBycatLike(category);
+        model.addAttribute("items", Results, catResults);
+
+//        public String addressSearch(@RequestParam("address") String address, Model model) {
+////            a = "%" + search + "%";
+//            address = "%" + address + "%";
+//            List<Item> addressResults = itemRepository.findByaddressLike(address);
+//            model.addAttribute("items", addressResults);
+//
+//            public String catSearch(@RequestParam("cat") String cat, Model model) {
+////            a = "%" + search + "%";
+//                cat = "%" + cat + "%";
+//                List<Item>catResults = categoryRepository.findBycatLike(cat);
+//                model.addAttribute("items", catResults);
+//
+//                public String zipAndAddress(@RequestParam("zipAddress") String cat, Model model) {
+//                    zipAddress =
+//                }
+//                List<Item> zipcodeAndAddress = itemRepository.findByZipcodeAndAddress(String zipcode, String address);
+//                model.addAttribute('items', zipcodeAndAddress)
 
         return "items/index";
+
+
     }
 
-    @PostMapping("search")
-    public String catSearch(@RequestParam("searchCat") String searchCat, Model model) {
 
-        return "search/catSearch";
-    }
 }
