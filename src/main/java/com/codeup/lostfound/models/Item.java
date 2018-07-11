@@ -86,7 +86,7 @@ public class Item {
 
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

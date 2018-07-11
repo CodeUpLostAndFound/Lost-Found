@@ -15,13 +15,13 @@ public interface ItemRepository extends CrudRepository <Item, Integer>  {
 
     void delete(int id);
 
-    List<Item>findByUser(User user);
+    List<Item> findByZipcodeLike(String zipcode);
+    List<Item> findByAddressLike(String address);
+    List<Item> findByZipcodeAndCat(String zipcode, String cat);
+    List<Item> findByZipcodeAndAddress(String zipcode, String address);
 
-//    List<Item> search(String s);
 
-
-//
-//    @Query(nativeQuery = true, value = "SELECT * FROM posts WHERE title LIKE ?1 OR body LIKE ?1")
+//    @Query(nativeQuery = true, value = "SELECT * FROM item WHERE zipcode LIKE ?1 OR body LIKE ?1")
 //    List<Item> search(String searchTerm);
 
 

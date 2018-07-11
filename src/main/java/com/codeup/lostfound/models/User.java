@@ -8,7 +8,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     @Column(nullable = false, unique = true)
     private String username;
@@ -29,7 +29,7 @@ public class User {
         this.password = password;
     }
 
-    public User(long id, String username, String email, String password) {
+    public User(int id, String username, String email, String password) {
         this.id = id;
         this.username = username;
         this.email = email;
@@ -45,11 +45,11 @@ public class User {
         password = copy.password;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

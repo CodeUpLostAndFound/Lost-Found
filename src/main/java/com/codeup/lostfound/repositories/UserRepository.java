@@ -12,7 +12,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
 
     User findByEmail(String email);
 
-    User findById(long id);
+    User findById(int id);
 
     @Query(nativeQuery = true, value = "SELECT * FROM users LIMIT 1")
     User first();
