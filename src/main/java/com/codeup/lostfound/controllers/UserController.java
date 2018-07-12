@@ -51,8 +51,9 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     public String profile(@PathVariable int id, Model model) {
-
         List<Item> items= itemRepository.findByUserId(id);
+        User user = users.findById(id);
+        model.addAttribute("user", user);
         model.addAttribute("items", items);
         return "/users/profile";
     }
