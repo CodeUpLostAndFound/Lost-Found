@@ -36,9 +36,7 @@ public class ItemController {
 
     @GetMapping("/items")
     public String allItems(Model model) {
-        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User user = userRepository.findById(prin.getId());
-        model.addAttribute("prin", prin);
+
         List<Item> items= itemRepository.findAll();
         model.addAttribute("items", items);
         return "items/index";
@@ -46,9 +44,7 @@ public class ItemController {
 
     @GetMapping("items/{id}")
     public String oneItem(@PathVariable int id, Model model) {
-        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User user = userRepository.findById(prin.getId());
-        model.addAttribute("prin", prin);
+
         Item item = (Item) itemRepository.findOne(id);
         model.addAttribute("item", item);
         return "items/showItem";
@@ -56,9 +52,7 @@ public class ItemController {
 
     @GetMapping("/items/create")
     public String create(Model model){
-        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User user = userRepository.findById(prin.getId());
-        model.addAttribute("prin", prin);
+
         model.addAttribute("item", new Item());
         return "items/create";
     }
@@ -71,10 +65,7 @@ public class ItemController {
 
     @GetMapping("/items/{id}/edit")
     public String edit(@PathVariable int id, Model model) {
-        System.out.println("Hello!!!");
-        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        User user = userRepository.findById(prin.getId());
-        model.addAttribute("prin", prin);
+
         model.addAttribute("item", itemRepository.findOne(id));
         return "items/edit";
     }
