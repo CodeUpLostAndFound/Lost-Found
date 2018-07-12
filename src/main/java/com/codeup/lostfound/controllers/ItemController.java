@@ -7,7 +7,6 @@ import com.codeup.lostfound.repositories.ItemRepository;
 import com.codeup.lostfound.repositories.UserRepository;
 import com.codeup.lostfound.services.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -65,15 +64,14 @@ public class ItemController {
 
     @GetMapping("/items/{id}/edit")
     public String edit(@PathVariable int id, Model model) {
-
         model.addAttribute("item", itemRepository.findOne(id));
         return "items/edit";
     }
 
     @PostMapping("/items/{id}/edit")
-    public String updateItem(@PathVariable int id, @ModelAttribute Item item) {
-        itemRepository.save(item);
-        return "redirect:/items/" + id;
+    public String updateItem(@PathVariable int id, @ModelAttribute Item item, User user) {
+        itemService.save(item);
+        return "redirect:/users/" + user.getId();
     }
 
     @PostMapping("/items/{id}/delete")

@@ -12,11 +12,8 @@
     <label for="description">Description</label>
     <input id="description" th:field="*{description}" />
 
-    <!--<label for="lost">please click if this is a lost item</label>-->
-    <!--<input id="lost" type="radio" th:field="*{lost}" />-->
-
-    <!--<label for="img">Upload Image of item if available</label>-->
-    <!--<input th:type="file" id="img" name="img" th:accept="*{image/*}">-->
+    <label for="lost">please click if this is a lost item</label>
+    <input id="lost" th:type="radio" th:checked="*{lost}" />
 
     <label for="addressOne">Address Where item was Lost/Found</label>
     <input id="addressOne" th:field="*{addressOne}" />
