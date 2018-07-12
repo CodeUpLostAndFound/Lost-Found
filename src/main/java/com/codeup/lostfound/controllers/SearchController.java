@@ -1,5 +1,6 @@
 package com.codeup.lostfound.controllers;
 
+import com.codeup.lostfound.models.Category;
 import com.codeup.lostfound.models.Item;
 import com.codeup.lostfound.repositories.CategoryRepository;
 import com.codeup.lostfound.repositories.ItemRepository;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -27,16 +29,36 @@ public class SearchController {
 
     }
 
+//    @GetMapping("/search")
+//    public String search(@RequestParam("zipcode") String zipcode, @RequestParam("address") String address, Model model) {
+//        address =  "%" + address + "%";
+//        zipcode = "%" + zipcode + "%";
+//
+//
+//        List<Item> Results = itemRepository.findByZipcodeLikeAndAddressTwoLike(zipcode, address);
+//        model.addAttribute("items", Results);
+//
+//        return "items/index";
+//
+//
+//    }
+
     @GetMapping("/search")
-    public String search(@RequestParam("zipcode") String zipcode, @RequestParam("address") String address, Model model) {
-        address =  "%" + address + "%";
-        zipcode = "%" + zipcode + "%";
+    public String search(
+            @RequestParam("cat") String[] stringCategories, Model model){
 
+        List<Category> categoryObjects = new ArrayList<>();
+        for(String category : stringCategories){
+            Category c = categoryRepository.findByName(category);
+            categoryObjects.add(c);
+        }
 
-        List<Item> Results = itemRepository.findByZipcodeLikeAndAddressTwoLike(zipcode, address);
-        model.addAttribute("items", Results);
+            // now we have a list of objects with type Category
 
-        return "items/index";
+            List<Item> searchResults = itemRepository.findByCategories(categoryObjects);
+            model.addAttribute("items", searchResults);
+            return "items/index";
+        }
 
 
     }
@@ -44,4 +66,6 @@ public class SearchController {
 
 
 
-}
+
+
+

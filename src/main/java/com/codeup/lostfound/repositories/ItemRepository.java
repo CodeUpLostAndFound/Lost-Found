@@ -1,6 +1,7 @@
 package com.codeup.lostfound.repositories;
 
 
+import com.codeup.lostfound.models.Category;
 import com.codeup.lostfound.models.Item;
 import com.codeup.lostfound.models.User;
 import org.springframework.data.repository.CrudRepository;
@@ -16,11 +17,21 @@ public interface ItemRepository extends CrudRepository <Item, Integer>  {
     void delete(int id);
 
     List<Item> findByZipcodeLike(String zipcode);
-//    List<Item> findByAddressLike(String address);
+
+
     List<Item> findByZipcodeLikeAndAddressTwoLike(String zipcode, String address);
+
+    List<Item> findByUser(User user);
+
+    List<Item> findByCategories(List<Category> categoryObjects);
+
+
+
+
+
+
 //    List<Item> findByZipcodeLikeAndAddress_2Like(String zipcode, String address);
-
-
+//    List<Item> findByAddressLike(String address);
 //    @Query(nativeQuery = true, value = "SELECT * FROM item WHERE zipcode LIKE ?1 OR body LIKE ?1")
 //    List<Item> search(String searchTerm);
 
