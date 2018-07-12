@@ -31,7 +31,7 @@
 
     <form action="${/claim}" method="POST">
         <input type="hidden" th:value="${item.id}" name="itemid"/>
-        <input type="hidden" th:value="${prin.id}" name="commentposterid"/>
+        <input type="hidden" th:value="${#authentication.principal.id}" name="commentposterid"/>
         <label for="comment">Comment</label>
         <input id="comment" type="text" name="comment"/>
         <input value="comment" type="submit" />

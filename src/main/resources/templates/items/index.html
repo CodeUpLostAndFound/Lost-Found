@@ -8,24 +8,6 @@
 <!--<h1 th:if="${! items.isEmpty()}">Here are all the found items!</h1>-->
 <!--<h1 th:if="${itens.isEmpty()}">Sorry, no results found!</h1>-->
 
-<div class="row">
-    <form class="col-6">
-        <div class="form-group">
-            <button>I Lost It!</button>
-            <!--Takes user to search page-->
-        </div>
-    </form>
-</div>
-
-<div class="row">
-    <form class="col-6">
-        <div class="form-group">
-            <button>I Found It!</button>
-            <!--Takes user to search page-->
-        </div>
-    </form>
-</div>
-
 <div th:each="item : ${items}">
     <div class="card col-6">
         <div class="card-body">
