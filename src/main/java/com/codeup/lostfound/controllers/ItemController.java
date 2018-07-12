@@ -7,7 +7,6 @@ import com.codeup.lostfound.repositories.ItemRepository;
 import com.codeup.lostfound.repositories.UserRepository;
 import com.codeup.lostfound.services.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,9 +35,7 @@ public class ItemController {
 
     @GetMapping("/items")
     public String allItems(Model model) {
-        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User user = userRepository.findById(prin.getId());
-        model.addAttribute("prin", prin);
+
         List<Item> items= itemRepository.findAll();
         model.addAttribute("items", items);
         return "items/index";
@@ -46,9 +43,7 @@ public class ItemController {
 
     @GetMapping("items/{id}")
     public String oneItem(@PathVariable int id, Model model) {
-        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User user = userRepository.findById(prin.getId());
-        model.addAttribute("prin", prin);
+
         Item item = (Item) itemRepository.findOne(id);
         model.addAttribute("item", item);
         return "items/showItem";
@@ -56,9 +51,7 @@ public class ItemController {
 
     @GetMapping("/items/create")
     public String create(Model model){
-        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User user = userRepository.findById(prin.getId());
-        model.addAttribute("prin", prin);
+
         model.addAttribute("item", new Item());
         return "items/create";
     }
@@ -66,22 +59,18 @@ public class ItemController {
     @PostMapping("/items/create")
     public String created(@ModelAttribute Item item, User user) {
         itemService.save(item);
-        return "redirect:/users/" + user.getId();
+        return "redirect:/items/" + item.getId();
     }
 
     @GetMapping("/items/{id}/edit")
     public String edit(@PathVariable int id, Model model) {
-        System.out.println("Hello!!!");
-        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        User user = userRepository.findById(prin.getId());
-        model.addAttribute("prin", prin);
         model.addAttribute("item", itemRepository.findOne(id));
         return "items/edit";
     }
 
     @PostMapping("/items/{id}/edit")
-    public String updateItem(@PathVariable int id, @ModelAttribute Item item) {
-        itemRepository.save(item);
+    public String updateItem(@PathVariable int id, @ModelAttribute Item item, User user) {
+        itemService.save(item);
         return "redirect:/items/" + id;
     }
 

@@ -10,6 +10,8 @@ import java.util.List;
 
 public interface ItemRepository extends CrudRepository <Item, Integer>  {
 
+    List<Item>findByUserId(int id);
+
     List<Item>findAll();
 
     Object findOne(int id);
