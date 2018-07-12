@@ -79,4 +79,27 @@ public class ItemController {
         itemRepository.delete(id);
         return "redirect:/users/" + user.getId();
     }
-}
+
+//    @PostMapping("items/{id}")
+//    public String search(
+//            @RequestParam("comment") String[] stringComment, Model model) {
+//        List<Comment> commentObjects = new ArrayList<>();
+//
+//        System.out.println("Got categories:");
+//        for (String stringComment : stringComment) {
+//            System.out.println("  - " + stringComment);
+//        }
+//
+//        System.out.println("Finding Comment objects...");
+//        for (String comment : stringComments) {
+//            Comment c = commentRepository.findByName(comment);
+//            System.out.printf("For string: %s, found Comment object: %s", comment, c);
+//            commentObjects.add(c);
+//        }
+//
+//        // now we have a list of objects with type Category
+//
+//        List<Item> searchResults = itemRepository.findByBody(commentObjects);
+//        model.addAttribute("items", searchResults);
+//        return "items/index";
+    }
