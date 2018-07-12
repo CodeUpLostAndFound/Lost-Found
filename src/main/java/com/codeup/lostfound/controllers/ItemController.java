@@ -59,7 +59,7 @@ public class ItemController {
     @PostMapping("/items/create")
     public String created(@ModelAttribute Item item, User user) {
         itemService.save(item);
-        return "redirect:/users/" + user.getId();
+        return "redirect:/items/" + item.getId();
     }
 
     @GetMapping("/items/{id}/edit")
@@ -71,7 +71,7 @@ public class ItemController {
     @PostMapping("/items/{id}/edit")
     public String updateItem(@PathVariable int id, @ModelAttribute Item item, User user) {
         itemService.save(item);
-        return "redirect:/users/" + user.getId();
+        return "redirect:/items/" + id;
     }
 
     @PostMapping("/items/{id}/delete")
