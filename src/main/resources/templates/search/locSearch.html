@@ -1,82 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/header :: header('Posts')" ></head>
+<head th:replace="partials/header :: header('Posts')"></head>
 <body>
 <div th:replace="partials/navbar :: navbar"></div>
 <div class="row">
     <form class="col-6" action="/search">
         <div class="form-group">
             <label for="address">Search by address</label>
-            <input class="form-control" id="address" type="text" name="address" />
-            <br />
+            <input class="form-control" id="address" type="text" name="address"/>
+            <br/>
             <label for="zipcode">Search by zipcode</label>
-            <input class="form-control" id="zipcode" type="text" name="zipcode" />
+            <input class="form-control" id="zipcode" type="text" name="zipcode"/>
         </div>
-
-            <div>
-                <dl class="dropdown">
-
-                    <dt>
-                        <a href="#">
-                            <label for="catSearch">Search by Category</label>
-                            <p class="multiSel"></p>
-                        </a>
-                    </dt>
-                    <dd>
-                        <div class="mutliSelect">
-                            <ul id="catSearch">
-                                <li>
-                                    <input type="checkbox" name="cat" value="Electronics" />Electronics</li>
-                                <li>
-                                    <input type="checkbox" name="cat" value="Apparel" />Apparel</li>
-                                <li>
-                                    <input type="checkbox" name="cat" value="Personal Items" />Personal Items</li>
-                                <li>
-                                    <input type="checkbox" name="cat" value="Pets" />Pets</li>
-                                <li>
-                                    <input type="checkbox" name="cat" value="Miscellaneous" />Miscellaneous</li>
-                            </ul>
-                        </div>
-                    </dd>
-                </dl>
-
-
-                <input value="Search" type="submit" />
-            </div>
     </form>
+    <form action="/searchcategory">
+
+        <p><label><input type="checkbox" name="cat" value="Electronics"/><span>Electronics</span></label></p>
+        <p><label><input type="checkbox" name="cat" value="Apparel"/><span>Apparel</span></label></p>
+        <p><label><input type="checkbox" name="cat" value="Personal Items"/><span>Personal Items</span></label></p>
+        <p><label><input type="checkbox" name="cat" value="Pets"/><span>Pets</span></label></p>
+        <p><label><input type="checkbox" name="cat" value="Miscellaneous"/><span>Miscellaneous</span></label></p>
+
+        <div>
+
+
+            <input value="Search" type="submit"/>
+        </div>
+    </form>
+
 </div>
 
-
-
-
-
-
-
-
-<!--<h1>Items Found</h1>-->
-
-
-
-
-<!--<h1 th:if="${! items.isEmpty()}">Here are all the found items!</h1>-->
-<!--<h1 th:if="${itens.isEmpty()}">Sorry, no results found!</h1>-->
-
-<!--<div th:each="item : ${items}">-->
-    <!--<div class="card col-6">-->
-        <!--<div class="card-body">-->
-            <!--<h2 class="text-center"><span th:text="${item.title}"></span></h2>-->
-            <!--&lt;!&ndash;<p>Posted By: <span th:text="${item.user.username}" /></p>&ndash;&gt;-->
-
-            <!--<p class="text-center"><span th:text="${item.body}"></span></p>-->
-            <!--<img src="${item.img}" />-->
-            <!--<a th:href="@{/items/{id}/edit(id=${item.id})}" class="btn btn-primary btn-block">Edit</a>-->
-            <!--<form class="col-3" method="post" th:action="@{/items/{id}/delete(id=${item.id})}">-->
-                <!--<input type="submit" class="btn btn-info btn-block" value="Delete" />-->
-            <!--</form>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
-
-<!--<div th:replace="partials/footer :: footer"></div>-->
+<div th:replace="partials/footer :: footer"></div>
 </body>
+
 </html>
