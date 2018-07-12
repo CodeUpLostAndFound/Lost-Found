@@ -51,11 +51,8 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     public String profile(@PathVariable int id, Model model) {
-        User prin = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User user = users.findById(prin.getId());
-        model.addAttribute("prin", user);
-        model.addAttribute("user", user);
-        List<Item> items= itemRepository.findByUser(user);
+
+        List<Item> items= itemRepository.findByUserId(id);
         model.addAttribute("items", items);
         return "/users/profile";
     }
