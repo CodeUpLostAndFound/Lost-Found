@@ -69,14 +69,14 @@ public class ItemController {
     }
 
     @PostMapping("/items/{id}/edit")
-    public String updateItem(@PathVariable int id, @ModelAttribute Item item, User user) {
+    public String updateItem(@PathVariable int id, @ModelAttribute Item item) {
         itemService.save(item);
         return "redirect:/items/" + id;
     }
 
     @PostMapping("/items/{id}/delete")
     public String delete(@PathVariable int id, @ModelAttribute User user) {
-        itemRepository.delete(id);
-        return "redirect:/users/" + user.getId();
+        itemService.delete(id);
+        return "redirect:/items";
     }
 }
