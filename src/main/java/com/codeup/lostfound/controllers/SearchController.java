@@ -22,46 +22,57 @@ public class SearchController {
         this.categoryRepository = categoryRepository;
 
     }
+
     @GetMapping("/search-form")
-    public String showSearchForm(){
+    public String showSearchForm() {
 
         return "search/locSearch";
 
     }
 
-//    @GetMapping("/search")
-//    public String search(@RequestParam("zipcode") String zipcode, @RequestParam("address") String address, Model model) {
-//        address =  "%" + address + "%";
-//        zipcode = "%" + zipcode + "%";
-//
-//
-//        List<Item> Results = itemRepository.findByZipcodeLikeAndAddressTwoLike(zipcode, address);
-//        model.addAttribute("items", Results);
-//
-//        return "items/index";
-//
-//
-//    }
 
     @GetMapping("/search")
-    public String search(
-            @RequestParam("cat") String[] stringCategories, Model model){
+    public String search(@RequestParam("zipcode") String zipcode, @RequestParam("address") String address, Model model) {
+        address =  "%" + address + "%";
+        zipcode = "%" + zipcode + "%";
 
-        List<Category> categoryObjects = new ArrayList<>();
-        for(String category : stringCategories){
-            Category c = categoryRepository.findByName(category);
-            categoryObjects.add(c);
-        }
 
-            // now we have a list of objects with type Category
+        List<Item> Results = itemRepository.findByZipcodeLikeAndAddressTwoLike(zipcode, address);
+        model.addAttribute("items", Results);
 
-            List<Item> searchResults = itemRepository.findByCategories(categoryObjects);
-            model.addAttribute("items", searchResults);
-            return "items/index";
-        }
+        return "items/index";
 
 
     }
+
+
+
+    @GetMapping("/searchcategory")
+    public String search(
+            @RequestParam("cat") String[] stringCategories, Model model) {
+        List<Category> categoryObjects = new ArrayList<>();
+
+        System.out.println("Got categories:");
+        for (String stringCategory : stringCategories) {
+            System.out.println("  - " + stringCategory);
+        }
+
+        System.out.println("Finding Category objects...");
+        for (String category : stringCategories) {
+            Category c = categoryRepository.findByName(category);
+            System.out.printf("For string: %s, found Category object: %s", category, c);
+            categoryObjects.add(c);
+        }
+
+        // now we have a list of objects with type Category
+
+        List<Item> searchResults = itemRepository.findByCategories(categoryObjects);
+        model.addAttribute("items", searchResults);
+        return "items/index";
+    }
+
+
+}
 
 
 
