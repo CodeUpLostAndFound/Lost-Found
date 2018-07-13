@@ -30,6 +30,7 @@ public class SearchController {
 
     }
 
+
     @GetMapping("/search")
     public String search(@RequestParam("zipcode") String zipcode, @RequestParam("address") String address, Model model) {
         address =  "%" + address + "%";
@@ -43,6 +44,8 @@ public class SearchController {
 
 
     }
+
+
 
     @GetMapping("/searchcategory")
     public String search(
