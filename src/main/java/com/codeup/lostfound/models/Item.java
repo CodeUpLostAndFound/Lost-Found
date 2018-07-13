@@ -21,8 +21,8 @@ public class Item {
     @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String description;
 
-    @Column(name = "lost_or_found")
-    private String lost;
+    @Column(name = "lost_or_found", nullable = false)
+    private boolean lost;
 
     @Column
     private String img;
@@ -51,13 +51,16 @@ public class Item {
     @JoinTable
     private List<Category> categories;
 
+    @JoinTable
+    private List<Comment> comments;
+
 
     public Item() {
     }
 
 
     //    new item
-    public Item(String title, String description, String lost, String img, String addressOne, String addressTwo, String city, String state, String zipcode, List<Category> categories) {
+    public Item(String title, String description, boolean lost, String img, String addressOne, String addressTwo, String city, String state, String zipcode, List<Category> categories, List<Comment> comments) {
 
         this.title = title;
         this.description = description;
@@ -69,9 +72,10 @@ public class Item {
         this.state = state;
         this.zipcode = zipcode;
         this.categories = categories;
+        this.comments = comments;
     }
 
-    public Item(int id, String title, String description, String lost, String img, String addressOne, String addressTwo, String city, String state, String zipcode, List<Category> categories) {
+    public Item(int id, String title, String description, boolean lost, String img, String addressOne, String addressTwo, String city, String state, String zipcode, List<Category> categories, List<Comment> comments) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -83,6 +87,7 @@ public class Item {
         this.state = state;
         this.zipcode = zipcode;
         this.categories = categories;
+        this.comments = comments;
 
     }
 
@@ -118,11 +123,11 @@ public class Item {
         this.description = description;
     }
 
-    public String isLost() {
+    public boolean isLost() {
         return lost;
     }
 
-    public void setLost(String lost) {
+    public void setLost(boolean lost) {
         this.lost = lost;
     }
 
@@ -181,6 +186,14 @@ public class Item {
 
     public void setCategories(List<Category> categories) {
         this.categories = categories;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 
     public void save(Item item) {
