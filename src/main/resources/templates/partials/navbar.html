@@ -5,13 +5,11 @@
     <!--<title>Title</title>-->
 <!--</head>-->
 <body>
-<nav th:fragment="navbar" class="navbar">
+<nav th:fragment="navbar">
     <div class="nav-wrapper">
+        <h3 href="#!" class="brand-logo">LOST 'n FOUND</h3>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <h3 class="brand-logo">LOST 'n FOUND</h3>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-
-
             <li><a th:href="@{/items}">Home</a></li>
             <li><a th:href="@{/items/create}">Create</a></li>
             <li><a href="/search-form">Search</a></li>
@@ -25,6 +23,17 @@
     </div>
 </nav>
 
+<ul class="sidenav" id="mobile-demo">
+    <li><a th:href="@{/items}">Home</a></li>
+    <li><a th:href="@{/items/create}">Create</a></li>
+    <li><a href="/search-form">Search</a></li>
+    <li><a th:href="@{/users/{id}(id=${#authentication.principal.id})}">Profile</a></li>
+    <li>
+        <form th:action="@{/logout}" th:method="post">
+            <button class="btn-link btn" style="margin-top: 8px">Logout</button>
+        </form>
+    </li>
+</ul>
 
 </body>
 </html>

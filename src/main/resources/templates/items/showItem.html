@@ -7,6 +7,13 @@
 
 <div class="container">
 
+    <div th:if="${item.isLost() != null}">
+        <h1>Lost</h1>
+    </div>
+    <div th:if="${item.isLost() == null}">
+        <h1>Found</h1>
+    </div>
+
     <h1 th:text="${item.title}" />
 
     <!--<p th:text="${item.lost}" />-->
@@ -33,7 +40,7 @@
         <input type="hidden" th:value="${item.id}" name="itemid"/>
         <input type="hidden" th:value="${#authentication.principal.id}" name="commentposterid"/>
         <label for="comment">Comment</label>
-        <input id="comment" type="text" name="comment"/>
+        <input id="comment" type="text" th:name="comment"/>
         <input value="comment" type="submit" />
     </form>
 

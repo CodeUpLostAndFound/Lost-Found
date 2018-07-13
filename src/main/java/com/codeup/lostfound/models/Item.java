@@ -21,8 +21,8 @@ public class Item {
     @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String description;
 
-    @Column(name = "lost_or_found", nullable = false)
-    private boolean lost;
+    @Column(name = "lost_or_found")
+    private String lost;
 
     @Column
     private String img;
@@ -57,7 +57,7 @@ public class Item {
 
 
     //    new item
-    public Item(String title, String description, boolean lost, String img, String addressOne, String addressTwo, String city, String state, String zipcode, List<Category> categories) {
+    public Item(String title, String description, String lost, String img, String addressOne, String addressTwo, String city, String state, String zipcode, List<Category> categories) {
 
         this.title = title;
         this.description = description;
@@ -71,7 +71,7 @@ public class Item {
         this.categories = categories;
     }
 
-    public Item(int id, String title, String description, boolean lost, String img, String addressOne, String addressTwo, String city, String state, String zipcode, List<Category> categories) {
+    public Item(int id, String title, String description, String lost, String img, String addressOne, String addressTwo, String city, String state, String zipcode, List<Category> categories) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -118,11 +118,11 @@ public class Item {
         this.description = description;
     }
 
-    public boolean isLost() {
+    public String isLost() {
         return lost;
     }
 
-    public void setLost(boolean lost) {
+    public void setLost(String lost) {
         this.lost = lost;
     }
 
