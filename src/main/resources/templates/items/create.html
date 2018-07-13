@@ -12,8 +12,11 @@
     <label for="description">Description</label>
     <input id="description" th:field="*{description}" />
 
-    <label for="lost">please check if this is a lost item</label>
-    <input id="lost" th:type="radio" th:checked="*{lost}" />
+    <p>
+        <label for="lost">
+            <input type="checkbox" id="lost" name="lost" value="lost"/><span>Please select if reporting a lost item.</span>
+        </label>
+    </p>
 
     <label for="addressOne">Address Where item was Lost/Found</label>
     <input id="addressOne" th:field="*{addressOne}" />

@@ -12,9 +12,14 @@
         <div class="card col-6">
             <div class="card-body">
 
-            <h1 th:text="${item.title}" />
+                <div th:if="${item.isLost() != null}">
+                    <h3>Lost</h3>
+                </div>
+                <div th:if="${item.isLost() == null}">
+                    <h3>Found</h3>
+                </div>
 
-            <p th:text="${item.lost}" />
+            <h1 th:text="${item.title}" />
 
             <p th:text="${item.description}" />
 
