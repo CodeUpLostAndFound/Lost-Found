@@ -14,7 +14,7 @@ public class Category {
         private int id;
 
         @Column(nullable = false)
-        private String category;
+        private String name;
 
         @ManyToMany(mappedBy = "categories")
         private List<Item> items;
@@ -28,11 +28,11 @@ public class Category {
         this.id = id;
     }
 
-    public String getCategory() {
-        return category;
+    public String getName() {
+        return name;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setName(String name) {
+        this.name = name;
     }
 }
