@@ -37,7 +37,7 @@ public class SearchController {
         zipcode = "%" + zipcode + "%";
 
 
-        List<Item> Results = itemRepository.findByZipcodeLikeAndAddressTwoLike(zipcode, address);
+        List<Item> Results = itemRepository.findByZipcodeLikeAndAddressLike(zipcode, address);
         model.addAttribute("items", Results);
 
         return "items/index";
