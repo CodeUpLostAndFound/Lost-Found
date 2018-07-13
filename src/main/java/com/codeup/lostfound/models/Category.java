@@ -16,7 +16,7 @@ public class Category {
         @Column(nullable = false)
         private String name;
 
-        @ManyToMany(mappedBy = "name")
+        @ManyToMany(mappedBy = "categories")
         private List<Item> items;
 
 

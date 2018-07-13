@@ -3,16 +3,16 @@ package com.codeup.lostfound.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="comment")
+@Table(name="comments")
 public class Comment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private int id;
 
     @ManyToOne
     @JoinColumn(name = "item_id")
-    private int itemId;
+    private Item item;
 
     @Column(name = "body", nullable = false, columnDefinition = "TEXT")
     private String body;
