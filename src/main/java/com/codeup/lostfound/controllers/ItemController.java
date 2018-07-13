@@ -1,5 +1,6 @@
 package com.codeup.lostfound.controllers;
 
+import com.codeup.lostfound.models.Category;
 import com.codeup.lostfound.models.Comment;
 import com.codeup.lostfound.models.Item;
 import com.codeup.lostfound.models.User;
@@ -58,7 +59,23 @@ public class ItemController {
     }
 
     @PostMapping("/items/create")
-    public String created(@ModelAttribute Item item, User user) {
+    public String created(@ModelAttribute Item item, @RequestParam("cat") String[] stringCategories) {
+        List<Category> categoryObjects = new ArrayList<>();
+
+        System.out.println("\n\n\n----------");
+
+        System.out.println("Got categories:");
+        for (String stringCategory : stringCategories) {
+            System.out.println("  - " + stringCategory);
+        }
+
+        System.out.println("Finding Category objects...");
+        for (String category : stringCategories) {
+            Category c = categoryRepository.findByName(category);
+            System.out.printf("For string: %s, found Category object: %s\n", category, c);
+            categoryObjects.add(c);
+        }
+        item.setCategories(categoryObjects);
         itemService.save(item);
         return "redirect:/items/" + item.getId();
     }

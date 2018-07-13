@@ -66,7 +66,7 @@ public class SearchController {
 
         // now we have a list of objects with type Category
 
-        List<Item> searchResults = itemRepository.findByCategories(categoryObjects);
+        List<Item> searchResults = itemRepository.findByCategoriesIn(categoryObjects);
         model.addAttribute("items", searchResults);
         return "items/index";
     }

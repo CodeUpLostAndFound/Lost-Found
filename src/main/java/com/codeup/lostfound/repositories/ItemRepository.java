@@ -24,7 +24,7 @@ public interface ItemRepository extends CrudRepository <Item, Integer>  {
 
     List<Item> findByUser(User user);
 
-    List<Item> findByCategories(List<Category> categoryObjects);
+    List<Item> findByCategoriesIn(List<Category> categoryObjects);
 //    List<Item> findByComments(List<Comment> commentObjects);
 
 
