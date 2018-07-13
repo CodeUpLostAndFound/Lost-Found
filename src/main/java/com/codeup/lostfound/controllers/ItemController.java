@@ -2,6 +2,7 @@ package com.codeup.lostfound.controllers;
 
 import com.codeup.lostfound.models.Item;
 import com.codeup.lostfound.models.User;
+import com.codeup.lostfound.repositories.CommentRepository;
 import com.codeup.lostfound.repositories.CategoryRepository;
 import com.codeup.lostfound.repositories.ItemRepository;
 import com.codeup.lostfound.repositories.UserRepository;
@@ -22,13 +23,15 @@ public class ItemController {
     public ItemRepository itemRepository;
     public UserRepository userRepository;
     public CategoryRepository categoryRepository;
+    public CommentRepository commentRepository;
     private ItemService itemService;
 
     @Autowired
-    public ItemController(ItemRepository itemRepository, UserRepository userRepository, CategoryRepository categoryRepository, ItemService itemService) {
+    public ItemController(ItemRepository itemRepository, UserRepository userRepository, CategoryRepository categoryRepository, CommentRepository commentRepository, ItemService itemService) {
         this.itemRepository = itemRepository;
         this.userRepository = userRepository;
         this.categoryRepository = categoryRepository;
+        this.commentRepository = commentRepository;
         this.itemService = itemService;
     }
 
@@ -80,26 +83,11 @@ public class ItemController {
         return "redirect:/users/" + user.getId();
     }
 
-//    @PostMapping("items/{id}")
-//    public String search(
-//            @RequestParam("comment") String[] stringComment, Model model) {
-//        List<Comment> commentObjects = new ArrayList<>();
-//
-//        System.out.println("Got categories:");
-//        for (String stringComment : stringComment) {
-//            System.out.println("  - " + stringComment);
-//        }
-//
-//        System.out.println("Finding Comment objects...");
-//        for (String comment : stringComments) {
-//            Comment c = commentRepository.findByName(comment);
-//            System.out.printf("For string: %s, found Comment object: %s", comment, c);
-//            commentObjects.add(c);
-//        }
-//
-//        // now we have a list of objects with type Category
-//
-//        List<Item> searchResults = itemRepository.findByBody(commentObjects);
-//        model.addAttribute("items", searchResults);
-//        return "items/index";
+    @PostMapping("items/{id}")
+    public String search(
+            @RequestParam("comment") String[] stringComment, Model model) {
+        List<Comment> commentObjects = new ArrayList<>();
+
+
+        return "items/index";
     }
