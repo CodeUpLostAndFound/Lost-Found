@@ -8,7 +8,7 @@ import java.util.List;
 public class Item {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private int id;
 
     @ManyToOne
@@ -51,7 +51,10 @@ public class Item {
     @JoinTable
     private List<Category> categories;
 
-    @JoinTable
+//    @JoinTable
+//    private List<Comment> comments;
+
+    @OneToMany(mappedBy = "item")
     private List<Comment> comments;
 
 
