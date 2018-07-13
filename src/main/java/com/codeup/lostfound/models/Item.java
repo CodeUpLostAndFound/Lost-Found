@@ -28,10 +28,10 @@ public class Item {
     private String img;
 
     @Column
-    private String addressOne;
+    private String address;
 
-    @Column
-    private String addressTwo;
+//    @Column
+//    private String addressTwo;
 
     @Column
     private String city;
@@ -63,14 +63,14 @@ public class Item {
 
 
     //    new item
-    public Item(String title, String description, String lost, String img, String addressOne, String addressTwo, String city, String state, String zipcode, List<Category> categories, List<Comment> comments) {
+    public Item(String title, String description, String lost, String img, String address, String city, String state, String zipcode, List<Category> categories, List<Comment> comments) {
 
         this.title = title;
         this.description = description;
         this.lost = lost;
         this.img = img;
-        this.addressOne = addressOne;
-        this.addressTwo = addressTwo;
+        this.address = address;
+//        this.addressTwo = addressTwo;
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
@@ -78,14 +78,14 @@ public class Item {
         this.comments = comments;
     }
 
-    public Item(int id, String title, String description, String lost, String img, String addressOne, String addressTwo, String city, String state, String zipcode, List<Category> categories, List<Comment> comments) {
+    public Item(int id, String title, String description, String lost, String img, String address, String city, String state, String zipcode, List<Category> categories, List<Comment> comments) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.lost = lost;
         this.img = img;
-        this.addressOne = addressOne;
-        this.addressTwo = addressTwo;
+        this.address = address;
+//        this.addressTwo = addressTwo;
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
@@ -146,21 +146,21 @@ public class Item {
         this.img = img;
     }
 
-    public String getAddressOne() {
-        return addressOne;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddressOne(String addressOne) {
-        this.addressOne = addressOne;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getAddressTwo() {
-        return addressTwo;
-    }
+//    public String getAddressTwo() {
+//        return addressTwo;
+//    }
 
-    public void setAddressTwo(String addressTwo) {
-        this.addressTwo = addressTwo;
-    }
+//    public void setAddressTwo(String addressTwo) {
+//        this.addressTwo = addressTwo;
+//    }
 
     public String getCity() {
         return city;

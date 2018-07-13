@@ -20,7 +20,7 @@ public interface ItemRepository extends CrudRepository <Item, Integer>  {
 
     List<Item> findByZipcodeLike(String zipcode);
 
-    List<Item> findByZipcodeLikeAndAddressTwoLike(String zipcode, String address);
+    List<Item> findByZipcodeLikeAndAddressLike(String zipcode, String address);
 
     List<Item> findByUser(User user);
 
