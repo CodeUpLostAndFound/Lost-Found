@@ -98,12 +98,18 @@ public class ItemController {
         return "redirect:/items";
     }
 
-    @PostMapping("items/{id}")
-    public String search(
-            @RequestParam("comment") String[] stringComment, Model model) {
+    @PostMapping("/comment")
+    public String comment( @PathVariable int id, @RequestParam("comment") String[] stringComment, Model model) {
         List<Comment> commentObjects = new ArrayList<>();
 
 
-        return "items/index";
+        return "/items/" + id;
     }
+
+//    @PostMapping("/comment")
+//    public String comment(@PathVariable int id) {
+//
+//        return "redirect:/items/" + id;
+//    }
+
 }
