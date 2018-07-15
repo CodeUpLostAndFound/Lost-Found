@@ -37,6 +37,11 @@
     <hr/>
 
     <form action="${/claim}" method="POST">
+        <input
+                id="csrf"
+                type="hidden"
+                th:name="${_csrf.parameterName}"
+                th:value="${_csrf.token}" />
         <input type="hidden" th:value="${item.id}" name="itemid"/>
         <input type="hidden" th:value="${#authentication.principal.id}" name="commentposterid"/>
         <label for="comment">Comment</label>

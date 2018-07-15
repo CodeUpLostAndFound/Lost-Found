@@ -62,7 +62,7 @@ public class ItemController {
     public String created(@ModelAttribute Item item, @RequestParam("cat") String[] stringCategories) {
         List<Category> categoryObjects = new ArrayList<>();
 
-        System.out.println("\n\n\n----------");
+        System.out.println("----------");
 
         System.out.println("Got categories:");
         for (String stringCategory : stringCategories) {
