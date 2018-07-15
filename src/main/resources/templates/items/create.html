@@ -4,6 +4,9 @@
 <head th:replace="partials/header :: header('LostNFound Item')" ></head>
 <body>
 <div th:replace="partials/navbar :: navbar"></div>
+<div class="row">
+    <div class="col s12 m10">
+        <div class="card-panel teal">
 <h1>Post a Lost or Found Item</h1>
 <form th:action="@{/items/create}" method="post" th:object="${item}">
     <label for="title">Item Title</label>
@@ -41,5 +44,8 @@
 
     <input value="Post Item" type="submit" />
 </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

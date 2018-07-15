@@ -9,8 +9,9 @@
 <!--<h1 th:if="${itens.isEmpty()}">Sorry, no results found!</h1>-->
 
 <div th:each="item : ${items}">
-    <div class="card col-6">
-        <div class="card-body">
+    <div class="row">
+    <div class="col s12 m5">
+        <div class="card-panel teal">
             <div th:if="${item.isLost() != null}">
                 <h3>Lost</h3>
             </div>
@@ -21,13 +22,14 @@
             <!--<p>Posted By: <span th:text="${item.user.username}" /></p>-->
 
             <p class="text-center"><span th:text="${item.description}"></span></p>
-            <img src="${item.img}" />
-            <a th:href="@{/items/{id}(id=${item.id})}" class="btn btn-primary btn-block">view</a>
+            <!--<img src="${item.img}" />-->
+            <a th:href="@{/items/{id}(id=${item.id})}" class="btn btn-primary btn-block"><i  class="material-icons">visibility</i>  View</a>
 
             <!--<form class="col-3" method="post" th:action="@{/items/{id}/delete(id=${item.id})}">-->
                 <!--<input type="submit" class="btn btn-info btn-block" value="Delete" />-->
             <!--</form>-->
         </div>
+    </div>
     </div>
 </div>
 

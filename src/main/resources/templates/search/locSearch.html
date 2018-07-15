@@ -3,8 +3,11 @@
 <head th:replace="partials/header :: header('Posts')"></head>
 <body>
 <div th:replace="partials/navbar :: navbar"></div>
+<!--<div class="row">-->
 <div class="row">
-    <form class="col-6" action="/search">
+    <div class="col s12 m10">
+    <div class="card-panel teal">
+    <form action="/search">
         <div class="form-group">
             <label for="address">Search by address</label>
             <input class="form-control" id="address" type="text" name="address"/>
@@ -28,7 +31,8 @@
             <input value="Search" type="submit"/>
         </div>
     </form>
-
+    </div>
+</div>
 </div>
 
 <div th:replace="partials/footer :: footer"></div>
