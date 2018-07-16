@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/header :: header('Register')" ></head>
-<body class="tealbg">
+
+<body class="flex-container">
 <h1>Create an account</h1>
 <div>
 <form th:action="@{/users/register}" method="post" th:object="${user}">
