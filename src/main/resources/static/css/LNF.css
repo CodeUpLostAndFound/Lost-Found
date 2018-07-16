@@ -1,3 +1,9 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    alignment: center;
+}
+
 form {
     padding: 10px;
 }
@@ -47,4 +53,9 @@ justify-content: center;
 
 .card-panel{
     background-color: white;
+}
+
+.reverseMe{
+    flex-direction: column-reverse;
+
 }
