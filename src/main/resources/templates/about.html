@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/header :: header('About Us')" ></head>
-<style>
-    .rounded-circle {
-        box-shadow: #808080 2px 2px 6px;
-    }
-</style>
+
+
 <body>
 <div th:replace="partials/navbar :: navbar"></div>
 <div id="about" class="fluid-container mx-4">
@@ -16,7 +13,7 @@
         <div class="col-xs-12 col-lg-4 d-flex">
             <div class="card">
                 <div class="card-body">
-                    <img th:src="@{/img/Lance.jpg}" class="w-50 rounded-circle"/>
+                    <img class=" mx-auto about-img " src="/img/Lance.jpeg"  />
                     <hr/>
                     <h5 class="card-title text-primary">Lance Crowder</h5>
                     <p class="card-text text-muted">Software Developer</p>
@@ -38,7 +35,7 @@
         <div class="col-xs-12 col-lg-4 d-flex">
             <div class="card">
                 <div class="card-body">
-                    <img th:src="@{/img/Daniel.jpg}" class="w-50 rounded-circle"/>
+                    <img class=" mx-auto about-img " src="/img/Daniel.jpeg"  />
                     <hr/>
                     <h5 class="card-title text-primary">Daniel Conner</h5>
                     <p class="card-text text-muted">Software Developer</p>
@@ -60,7 +57,7 @@
         <div class="col-xs-12 col-lg-4 d-flex">
             <div class="card">
                 <div class="card-body">
-                    <img th:src="@{/img/heather.jpg}" class="w-50 rounded-circle"/>
+                    <img class=" mx-auto about-img " src="/img/Heather.jpeg"/>
                     <hr/>
                     <h5 class="card-title text-primary">Heather Arellano</h5>
                     <p class="card-text text-muted">Software Developer</p>
@@ -82,5 +79,7 @@
     </div>
 
 <script th:replace="partials/navbar :: scripts"></script>
+</div>
 </body>
+
 </html>

@@ -56,4 +56,11 @@ public class UserController {
         model.addAttribute("items", items);
         return "users/profile";
     }
+
+    @GetMapping("/about")
+    public String aboutPage() {
+        return "about";
+    }
+
+
 }
