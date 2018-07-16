@@ -5,7 +5,6 @@ import com.codeup.lostfound.models.Item;
 import com.codeup.lostfound.models.User;
 import com.codeup.lostfound.repositories.ItemRepository;
 import com.codeup.lostfound.repositories.UserRepository;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,7 +37,7 @@ public class UserController {
     public String register(Model model) {
 
         model.addAttribute("user", new User());
-        return "/users/register";
+        return "users/register";
     }
 
     @PostMapping("/users/register")
@@ -55,6 +54,6 @@ public class UserController {
         User user = users.findById(id);
         model.addAttribute("user", user);
         model.addAttribute("items", items);
-        return "/users/profile";
+        return "users/profile";
     }
 }
