@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/header :: header('About Us')" ></head>
+<style>
+    .rounded-circle {
+        box-shadow: #808080 2px 2px 6px;
+    }
+</style>
+<body>
+<div th:replace="partials/navbar :: navbar"></div>
+<div id="about" class="fluid-container mx-4">
+    <div class="row d-flex">
+        <div class="col-12">
+            <h1 class="display-4">About Us</h1>
+        </div>
+        <div class="col-xs-12 col-lg-4 d-flex">
+            <div class="card">
+                <div class="card-body">
+                    <img th:src="@{/img/Lance.jpg}" class="w-50 rounded-circle"/>
+                    <hr/>
+                    <h5 class="card-title text-primary">Lance Crowder</h5>
+                    <p class="card-text text-muted">Software Developer</p>
+
+                </div>
+                <div class="card-footer">
+                    <a target="_blank" href="https://www.linkedin.com/in/lancecrowder/">
+                        <i class="mx-2 fa fa-3x fa-linkedin-square"></i>
+                    </a>
+                    <a target="_blank" href="https://www.github.com/lancecrowder">
+                        <i class="mx-2 fa fa-3x fa-github-square"></i>
+                    </a>
+                    <a target="_blank" href="mailto:thelancecrowder@gmail.com">
+                        <i class="mx-2 fa fa-3x fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-lg-4 d-flex">
+            <div class="card">
+                <div class="card-body">
+                    <img th:src="@{/img/Daniel.jpg}" class="w-50 rounded-circle"/>
+                    <hr/>
+                    <h5 class="card-title text-primary">Daniel Conner</h5>
+                    <p class="card-text text-muted">Software Developer</p>
+
+                </div>
+                <div class="card-footer">
+                    <a target="_blank" href="https://www.linkedin.com/in/daniel-conner1342/">
+                        <i class="mx-2 fa fa-3x fa-linkedin-square"></i>
+                    </a>
+                    <a target="_blank" href="https://github.com/DanielC1342">
+                        <i class="mx-2 fa fa-3x fa-github-square"></i>
+                    </a>
+                    <a target="_blank" href="mailto:daniel.conner1342@gmail.com">
+                        <i class="mx-2 fa fa-3x fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-lg-4 d-flex">
+            <div class="card">
+                <div class="card-body">
+                    <img th:src="@{/img/heather.jpg}" class="w-50 rounded-circle"/>
+                    <hr/>
+                    <h5 class="card-title text-primary">Heather Arellano</h5>
+                    <p class="card-text text-muted">Software Developer</p>
+
+                </div>
+                <div class="card-footer">
+                    <a target="_blank" href="https://www.linkedin.com/in/heather-arellano-sanantonio/">
+                        <i class="mx-2 fa fa-3x fa-linkedin-square"></i>
+                    </a>
+                    <a target="_blank" href="https://github.com/heather-arellano">
+                        <i class="mx-2 fa fa-3x fa-github-square"></i>
+                    </a>
+                    <a target="_blank" href="mailto:harellano485@gmail.com">
+                        <i class="mx-2 fa fa-3x fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script th:replace="partials/navbar :: scripts"></script>
+</body>
+</html>
