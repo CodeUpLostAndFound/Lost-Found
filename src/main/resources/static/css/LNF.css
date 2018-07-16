@@ -2,6 +2,7 @@ form {
     padding: 10px;
 }
 
-background{
-linear-gradient(white, #12D6d6);)
+body{
+/*linear-gradient(white, #12D6d6);)*/
+    background-color: papayawhip;
 }
