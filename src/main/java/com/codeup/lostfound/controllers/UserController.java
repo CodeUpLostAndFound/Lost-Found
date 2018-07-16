@@ -27,10 +27,9 @@ public class UserController {
         this.passwordEncoder = passwordEncoder;
     }
 
-        @GetMapping("/")
+    @GetMapping("/")
     public String landing(Model model) {
-
-        return "redirect:login";
+        return "redirect:/login";
     }
 
     @GetMapping("/users/register")
