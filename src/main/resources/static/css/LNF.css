@@ -1,21 +1,8 @@
-
-
-
-
 form {
     padding: 10px;
 }
 
-
-body{
-/*linear-gradient(white, #12D6d6);)*/
-    background-color: papayawhip;
-}
-
-
-/*Login page*/
-
-#logbody {
+body {
     background-color: #12d6d6;
 }
 
@@ -56,4 +43,8 @@ justify-content: center;
 
 .found {
     color: #4C7A21;
+}
+
+.card-panel{
+    background-color: #12508E;
 }

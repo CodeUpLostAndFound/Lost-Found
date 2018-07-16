@@ -11,12 +11,12 @@
 <div th:each="item : ${items}">
     <div class="row">
     <div class="col s12 m5">
-        <div class="card-panel teal">
+        <div class="card-panel">
             <div th:if="${item.isLost() != null}">
-                <h3>Lost</h3>
+                <h3 class="lost">Lost</h3>
             </div>
             <div th:if="${item.isLost() == null}">
-                <h3>Found</h3>
+                <h3 class="found">Found</h3>
             </div>
             <h2 class="text-center"><span th:text="${item.title}"></span></h2>
             <!--<p>Posted By: <span th:text="${item.user.username}" /></p>-->
