@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/header :: header('Register')" ></head>
-<body>
+<body class="tealbg">
 <h1>Create an account</h1>
+<div>
 <form th:action="@{/users/register}" method="post" th:object="${user}">
     <label for="username">Username</label>
     <input id="username" name="username" th:field="*{username}" />
@@ -15,7 +16,8 @@
     <input id="password" type="password" name="password" th:field="*{password}" />
     <p>Passwords are case sensitive!</p>
 
-    <input value="Sign me up!" type="submit" />
+    <input value="Sign me up!" class="right" type="submit" />
 </form>
+</div>
 </body>
 </html>
