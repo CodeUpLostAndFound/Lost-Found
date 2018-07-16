@@ -37,7 +37,7 @@
 
             <p th:text="${item.zipcode}" />
 
-            <p th:text="${item.categories}" />
+            <!--<p th:text="${item.categories}" />-->
 
                 <form class="col-3" method="post" th:action="@{/items/{id}/delete(id=${item.id})}">
                     <input type="submit" class="btn btn-info btn-block" value="Delete" />
