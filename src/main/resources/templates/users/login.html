@@ -4,7 +4,7 @@
 <body id="logbody">
 <h1 id="logo"><span class="lost">Lost</span> 'N <span class="found">Found</span></h1>
 <p id="logindesc">Lost something? Looking for the owner of a reclaimed item? Lost 'n Found is dedicated to helping people find their lost items and connecting good samaratins to those who lost their things!</p>
-<h3>Log In</h3>
+<h3 class="m8">Log In</h3>
 <div th:if="${param.error}">
     Invalid Username and Password. (Remember, passwords are case sensitive)
 </div>
@@ -12,14 +12,14 @@
     You have been logged out.
 </div>
 <div class="row">
-    <div class="col s12 m8 centerpad">
+    <div class="col s12 m8 valign-wrapper">
         <div class="card logincard">
 <form th:action="@{/login}" method="post">
     <label for="username">Username</label>
     <input id="username" name="username" type="text" />
     <label for="password">Password</label>
     <input id="password" name="password" type="password" />
-    <input type="submit" value="Log In" />
+    <input type="submit" class="right topbot" value="Log In" />
 </form>
         </div>
     </div>
