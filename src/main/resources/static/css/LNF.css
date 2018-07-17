@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Bitter');
 
-
-
-
-
-
-
-
-
 .flex-container {
     display: flex;
     flex-direction: column;
@@ -97,7 +89,7 @@ h1{
 }
 
 #about{
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .centerpad{
@@ -116,4 +108,17 @@ h1{
 
 .logincard{
     padding: 1em;
+}
+
+#about{
+    position: center;
+}
+
+.about-card{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 3em;
+}
+
+#logout-form{
+    padding-top: 0em;
 }
