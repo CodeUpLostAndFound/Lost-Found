@@ -57,3 +57,16 @@ justify-content: center;
 .found {
     color: #4C7A21;
 }
+
+/*About*/
+#about{
+    font-family: Impact;
+    font-size: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.75rem;
+    color: white;
+}
+.aboutImg{
+    height: 50px;
+    width: 50px
+}
