@@ -72,4 +72,15 @@ h1{
 
 .brand-logo{
     margin-left: 1em;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#about{
+    flex-direction: row;
+}
+
+.centerpad{
+    margin: 0;
+    border: 0;
+    padding: 0;
 }
