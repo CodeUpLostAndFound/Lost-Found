@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+
+
+
+
+
+
+
+
+
 .flex-container {
     display: flex;
     flex-direction: column;
@@ -11,7 +21,10 @@ form {
 
 body {
     background-color: #12d6d6;
+    font-family: 'Bitter', serif;
+
 }
+
 
 #logo {
     font-family: Impact;
