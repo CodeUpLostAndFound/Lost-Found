@@ -1,6 +1,9 @@
-
-
-
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    alignment: center;
+    justify-content: center;
+}
 
 form {
     padding: 10px;
@@ -56,21 +59,28 @@ label {
 
 .card-panel{
     background-color: white;
+    margin: 2em;
 }
 
 .reverseMe{
     flex-direction: column-reverse;
+}
 
+h1{
+    text-align: center;
 }
-/*About*/
+
+.brand-logo{
+    margin-left: 1em;
+    text-shadow: 1px 1px 1px #000;
+}
+
 #about{
-    font-family: Impact;
-    font-size: 2.5rem;
-    margin-top: 2.5rem;
-    margin-bottom: 1.75rem;
-    color: white;
+    flex-direction: row;
 }
-.aboutImg{
-    height: 50px;
-    width: 50px
+
+.centerpad{
+    margin: 0;
+    border: 0;
+    padding: 0;
 }

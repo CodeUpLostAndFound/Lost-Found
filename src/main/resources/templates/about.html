@@ -1,64 +1,72 @@
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/header :: header('About Us')" ></head>
+<head th:replace="partials/header :: header('About Us')"></head>
 <body>
 <div th:replace="partials/navbar :: navbar"></div>
-<h1 class="About text-center">About Our Team</h1>
-<div class="fluid-container mx-2">
+<div id="about" class="fluid-container mx-4">
     <div class="row d-flex">
-        <div class="col-12">
-            <h1 class="display-4">About Us</h1>
+        <div class="col-4">
+            <h1 class="display-4">About Our Team</h1>
         </div>
-        <div class="container aboutUs text-center mt-3" >
-            <div class="row dashboardBlock ml-1">
-                <div class="col-md-5">
-                    <div class="aboutImg">
-                        <img src="/img/Lance.jpeg"/>
-                    </div>
+        <div class="col-xs-12 col-lg-4 d-flex">
+            <div class="card">
+                <div class="card-body">
+                    <img class="picUs" th:src="@{/img/Lance.jpg}" height="178" width="178"/>
                 </div>
-                <div class="col-md-7">
-                    <h1>Lance Crowder</h1>
-
-                    <p class="mt-4"><<a href="https://www.linkedin.com/in/lancecrowder/"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/lancecrowder"><i class="fab fa-github"></i></a>
-                        <a href="mailto:thelancecrowder@gmail.com"><i class="far fa-envelope"></i></a></p>
-                </div>
-            </div>
-            <div class="row dashboardBlock ml-1">
-                <div class="col-md-5">
-                    <div class="aboutImg">
-                        <img src="/img/Daniel.jpeg" />
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <h1>Daniel Conner</h1>
-
-                    <p class="mt-4"><<a href="https://www.linkedin.com/in/daniel-conner1342/"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/DanielC1342"><i class="fab fa-github"></i></a>
-                        <a href="mailto:daniel.conner1342@gmail.com"><i class="far fa-envelope"></i></a></p>
+                <div class="col-md-4">
+                    <h2>Lance Crowder</h2>
+                    <p class="mt-4">
+                        <a href="https://www.linkedin.com/in/lancecrowder/"><i class="fa fa-linkedin-square"
+                                                                               style="font-size:36px"></i></a>
+                        <a href="https://github.com/lancecrowder"><i class="fa fa-github"
+                                                                     style="font-size:36px"></i></a>
+                        <a href="mailto:thelancecrowder@gmail.com"><i class="fa fa-envelope-square"
+                                                                      style="font-size:36px"></i></a>
+                    </p>
                 </div>
             </div>
-            <div class="row dashboardBlock ml-1">
-                <div class="col-md-5">
-                    <div class="aboutImg">
-                        <img src="/img/Heather.jpeg" />
+            <div class="col-xs-12 col-lg-4 d-flex">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <img class="picUs" th:src="@{/img/Daniel.jpeg}"/>
+                        </div>
+                        <div class="col-md-4">
+                            <h2>Daniel Conner</h2>
+                            <p class="mt-4">
+                                <a href="https://www.linkedin.com/in/daniel-conner1342/"><i
+                                        class="fa fa-linkedin-square" style="font-size:36px"></i></a>
+                                <a href="https://github.com/DanielC1342"><i class="fa fa-github"
+                                                                            style="font-size:36px"></i></a>
+                                <a href="mailto:daniel.conner1342@gmail.com"><i class="fa fa-envelope-square"
+                                                                                style="font-size:36px"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-4 d-flex">
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img class="picUs" th:src="@{/img/Heather1.jpeg}"/>
+                                </div>
+                                <div class="col-md-4">
+                                    <h2>Heather Arellano</h2>
+                                    <p class="mt-4">
+                                        <a href="https://www.linkedin.com/in/heather-arellano-sanantonio/"><i
+                                                class="fa fa-linkedin-square" style="font-size:36px"></i></a>
+                                        <a href="https://github.com/heather-arellano"><i class="fa fa-github"
+                                                                                         style="font-size:36px"></i></a>
+                                        <a href="mailto:harellano485@gmail.com"><i class="fa fa-envelope-square"
+                                                                                   style="font-size:36px"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-7">
-                    <h1>Heather Arellano</h1>
-
-                    <p class="mt-4"><<a href="https://www.linkedin.com/in/heather-arellano-sanantonio/"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/heather-arellano"><i class="fab fa-github"></i></a>
-                        <a href="mailto:harellano485@gmail.com"><i class="far fa-envelope"></i></a></p>
-                </div>
             </div>
-
-
         </div>
-
-        <script th:replace="partials/navbar :: scripts"></script>
     </div>
-    </body>
-
+</div>
+</body>
 </html>
