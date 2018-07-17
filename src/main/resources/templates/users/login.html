@@ -3,7 +3,7 @@
 <head th:replace="partials/header :: header('LogIn')" ></head>
 <body class="flex-container">
 <h1 id="logo"><span class="lost">Lost</span> 'N <span class="found">Found</span></h1>
-<p id="logindesc">Lost something? Looking for the owner of a reclaimed item? Lost 'n Found is dedicated to helping people find their lost items and connecting good samaratins to those who lost their things!</p>
+<p id="logindesc">Lost something? Looking for the owner of a reclaimed item? Lost 'n Found is dedicated to helping people find their lost items and connecting good samaritans to those who lost their things!</p>
 
 <div th:if="${param.error}" >
     Invalid Username and Password. (Remember, passwords are case sensitive)
@@ -20,7 +20,7 @@
     <input id="username" name="username" type="text" />
     <label for="password">Password</label>
     <input id="password" name="password" type="password" />
-    <input type="submit" class="right topbot" value="Log In" />
+    <input type="submit" class="right btn waves-effect waves-light" value="Log In" />
 </form>
         </div>
     </div>
