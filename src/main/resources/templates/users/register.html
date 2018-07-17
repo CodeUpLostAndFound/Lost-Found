@@ -6,6 +6,10 @@
 <body class="flex-container">
 <h1>Create an account</h1>
 <div>
+    <div class="col s12 m10">
+        <div class="card-panel">
+            <!--<div class="card">-->
+            <div class="card-body">
 <form th:action="@{/users/register}" method="post" th:object="${user}">
     <label for="username">Username</label>
     <input id="username" name="username" th:field="*{username}" />
@@ -19,6 +23,9 @@
 
     <input value="Sign me up!" class="right" type="submit" />
 </form>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
