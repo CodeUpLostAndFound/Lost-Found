@@ -16,7 +16,7 @@
             <li><a th:href="@{/users/{id}(id=${#authentication.principal.id})}">Profile</a></li>
             <li><a th:href="@{/about}">About Us</a></li>
             <li>
-                <form th:action="@{/logout}" th:method="post">
+                <form th:action="@{/logout}" th:method="post" id="logout-form">
                 <button class="btn-link btn" style="margin-top: 8px">Logout</button>
                 </form>
             </li>

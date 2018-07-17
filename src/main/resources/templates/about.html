@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/header :: header('About Us')"></head>
-<body>
+<body class="flex-container">
 <div th:replace="partials/navbar :: navbar"></div>
 <div id="about" class="fluid-container mx-4">
-    <div class="row d-flex">
-        <div class="col-4">
-            <h1 class="display-4">About Our Team</h1>
-        </div>
-        <div class="col-xs-12 col-lg-4 d-flex">
-            <div class="card">
-                <div class="card-body">
-                    <img class="picUs" th:src="@{/img/Lance.jpeg}" height="178" width="178"/>
+    <!--<div class="row d-flex">-->
+
+            <h1 class="headUs">About Our Team</h1>
+
+<div class="row">
+    <div class="col s4">
+        <!--<div class="card-panel">-->
+            <div class="about-card">
+                <div>
+                    <img class="picUs" th:src="@{/img/Lance.jpg}" height="178" width="178"/>
                 </div>
                 <div class="col-md-4">
-                    <h2>Lance Crowder</h2>
+                    <h2>Lance E. Crowder</h2>
                     <p class="mt-4">
-                        <a href="https://www.linkedin.com/in/lancecrowder/"><i class="fa fa-linkedin-square"
-                                                                               style="font-size:36px"></i></a>
-                        <a href="https://github.com/lancecrowder"><i class="fa fa-github"
-                                                                     style="font-size:36px"></i></a>
-                        <a href="mailto:thelancecrowder@gmail.com"><i class="fa fa-envelope-square"
-                                                                      style="font-size:36px"></i></a>
+                        <a href="https://www.linkedin.com/in/lancecrowder/"><i
+                                class="fa fa-linkedin-square" style="font-size:36px"></i></a>
+                        <a href="https://github.com/lancecrwoder"><i class="fa fa-github"
+                                                                         style="font-size:36px"></i></a>
+                        <a href="mailto:thelancecrwoder@gmail.com"><i class="fa fa-envelope-square"
+                                                                   style="font-size:36px"></i></a>
                     </p>
                 </div>
+            <!--</div>-->
+        </div>
+    </div>
+<div class="col s4">
+    <!--<div class="card-panel">-->
+        <div class="about-card">
+            <div>
+                <img class="picUs" th:src="@{/img/Daniel.jpeg}"/>
             </div>
-            <div class="col-xs-12 col-lg-4 d-flex">
-                <div class="card">
-                    <div class="card-body">
-                        <div>
-                            <img class="picUs" th:src="@{/img/Daniel.jpeg}"/>
-                        </div>
-                        <div class="col-md-4">
-                            <h2>Daniel Conner</h2>
-                            <p class="mt-4">
-                                <a href="https://www.linkedin.com/in/daniel-conner1342/"><i
-                                        class="fa fa-linkedin-square" style="font-size:36px"></i></a>
-                                <a href="https://github.com/DanielC1342"><i class="fa fa-github"
-                                                                            style="font-size:36px"></i></a>
-                                <a href="mailto:daniel.conner1342@gmail.com"><i class="fa fa-envelope-square"
-                                                                                style="font-size:36px"></i></a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-4 d-flex">
-                        <div class="card">
-                            <div class="card-body">
+            <div class="col-md-4">
+                <h2>Daniel Conner</h2>
+                <p class="mt-4">
+                    <a href="https://www.linkedin.com/in/daniel-conner1342/"><i
+                            class="fa fa-linkedin-square" style="font-size:36px"></i></a>
+                    <a href="https://github.com/DanielC1342"><i class="fa fa-github"
+                                                                     style="font-size:36px"></i></a>
+                    <a href="mailto:daniel.conner1342"><i class="fa fa-envelope-square"
+                                                               style="font-size:36px"></i></a>
+                </p>
+            </div>
+        <!--</div>-->
+    </div>
+</div>
+<!--</div>-->
+                <div class="col s4">
+                    <!--<div class="card-panel">-->
+                            <div class="about-card">
                                 <div>
                                     <img class="picUs" th:src="@{/img/Heather1.jpeg}"/>
                                 </div>
@@ -60,13 +67,16 @@
                                                                                    style="font-size:36px"></i></a>
                                     </p>
                                 </div>
-                            </div>
+                            <!--</div>-->
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 </div>
+</div>
+
+<!--<p class="codeup" th:href="@{http://alumni.codeup.com/}">Codeup Alumni</p>-->
 </body>
 </html>
