@@ -4,11 +4,12 @@
 <body class="flex-container">
 <div th:replace="partials/navbar :: navbar"></div>
 <!--<div class="row">-->
-<div class="row">
+<!--<div class="row">-->
     <div class="col s12 m10">
     <div class="card-panel">
     <form action="/search">
         <div class="form-group">
+            <h3>Please enter an Address and/or Zip Code, or click a Category to Search</h3>
             <label for="address">Search by address</label>
             <input class="form-control" id="address" type="text" name="address"/>
             <br/>
@@ -33,7 +34,7 @@
     </form>
     </div>
 </div>
-</div>
+<!--</div>-->
 
 <div th:replace="partials/footer :: footer"></div>
 </body>

@@ -8,20 +8,20 @@
 <h1>Welcome <span th:text="${#authentication.principal.username}"></span></h1>
 
     <div th:each="item : ${items}">
-        <div class="row">
+        <!--<div class="row">-->
             <div class="col s12 m10">
                 <div class="card-panel">
         <!--<div class="card">-->
             <div class="card-body">
 
                 <div th:if="${item.isLost() != null}">
-                    <h3 class="lost">Lost</h3>
+                    <h2 class="lost">Lost:</h2>
                 </div>
                 <div th:if="${item.isLost() == null}">
-                    <h3 class="found">Found</h3>
+                    <h2 class="found">Found:</h2>
                 </div>
 
-            <h1 th:text="${item.title}" />
+            <h3 th:text="${item.title}" />
 
             <p th:text="${item.description}" />
 
@@ -50,7 +50,7 @@
         <!--</div>-->
     </div>
 <!--</div>-->
-        </div>
+        <!--</div>-->
     </div>
 </div>
 
