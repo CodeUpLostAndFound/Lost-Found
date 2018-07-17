@@ -22,6 +22,9 @@ form {
 body {
     background-color: #12d6d6;
     font-family: 'Bitter', serif;
+    background-color: #000;
+    background-image: url("../img/geometricbg.jpg");
+    background-size: 1440px;
 
 }
 
@@ -31,6 +34,7 @@ body {
     text-align: center;
     font-size: 100px;
     margin-bottom: 50px;
+    text-shadow: 1px 1px 1px #000;
 }
 
 #logindesc {
@@ -72,7 +76,11 @@ label {
 
 .card-panel{
     background-color: white;
-    margin: 2em;
+    /*margin: 2em;*/
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 7em;
+
 }
 
 .reverseMe{
@@ -93,7 +101,19 @@ h1{
 }
 
 .centerpad{
-    margin: 0;
-    border: 0;
-    padding: 0;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 7em;
+}
+
+.nav-wrapper{
+    background-color: #1854A8;
+}
+
+.n-logo{
+    color: #000000;
+}
+
+.logincard{
+    padding: 1em;
 }
