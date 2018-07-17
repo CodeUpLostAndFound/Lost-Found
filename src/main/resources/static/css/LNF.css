@@ -62,7 +62,11 @@ label {
 
 .card-panel{
     background-color: white;
-    margin: 2em;
+    /*margin: 2em;*/
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 7em;
+
 }
 
 .reverseMe{
@@ -83,9 +87,9 @@ h1{
 }
 
 .centerpad{
-    margin: 0;
-    border: 0;
-    padding: 0;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 7em;
 }
 
 .nav-wrapper{
@@ -94,4 +98,8 @@ h1{
 
 .n-logo{
     color: #000000;
+}
+
+.logincard{
+    padding: 1em;
 }

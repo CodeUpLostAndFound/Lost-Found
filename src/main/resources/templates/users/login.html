@@ -3,7 +3,7 @@
 <head th:replace="partials/header :: header('LogIn')" ></head>
 <body class="flex-container">
 <h1 id="logo"><span class="lost">Lost</span> 'N <span class="found">Found</span></h1>
-<p id="logindesc">Lost something? Looking for the owner of a reclaimed item? Lost 'n Found is dedicated to helping people find their lost items and connecting good samaritans to those who lost their things!</p>
+<!--<p id="logindesc">Lost 'n Found is dedicated to helping people find their lost items and connecting good samaritans to those who lost their things!</p>-->
 
 <div th:if="${param.error}" >
     Invalid Username and Password. (Remember, passwords are case sensitive)
@@ -11,8 +11,8 @@
 <div th:if="${param.logout}">
     You have been logged out.
 </div >
-<div class="row">
-    <div class="col s12 m10 centerpad">
+<!--<div class="row">-->
+    <div class="col s12 m6 centerpad">
         <div class="card logincard">
             <h5>LOG IN</h5>
             <form th:action="@{/login}" method="post">
@@ -22,10 +22,10 @@
     <input id="password" name="password" type="password" />
     <input type="submit" class="right btn waves-effect waves-light" value="Log In" />
 </form>
+            <a th:href="@{/users/register}" id="areg">Dont have an account? Click here to register!</a>
         </div>
     </div>
-</div>
+<!--</div>-->
 <!---->
-<a th:href="@{/users/register}" id="areg">Dont have an account? Click here to register!</a>
 </body>
 </html>
