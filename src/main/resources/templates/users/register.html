@@ -7,7 +7,7 @@
 <h1>Create an account</h1>
 <div>
     <div class="col s12 m10">
-        <div class="card-panel">
+        <div class="card-panel" id="sign-card">
             <!--<div class="card">-->
             <div class="card-body">
 <form th:action="@{/users/register}" method="post" th:object="${user}">
@@ -21,7 +21,7 @@
     <input id="password" type="password" name="password" th:field="*{password}" />
     <p>Passwords are case sensitive!</p>
 
-    <input value="Sign me up!" class="right" type="submit" />
+    <input value="Sign me up!" id="sign-up" class="btn waves-effect waves-light right" type="submit" />
 </form>
             </div>
         </div>

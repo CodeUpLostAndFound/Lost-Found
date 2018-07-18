@@ -16,7 +16,7 @@ body {
     font-family: 'Bitter', serif;
     background-color: #000;
     background-image: url("../img/geometricbg.jpg");
-    background-size: 1440px;
+    background-size: cover;
 
 }
 
@@ -122,3 +122,12 @@ h1{
 #logout-form{
     padding-top: 0em;
 }
+
+input{
+    color: white;
+}
+
+#sign-card{
+    padding-bottom: 3em;
+}
+
